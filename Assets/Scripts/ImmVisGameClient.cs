@@ -150,6 +150,29 @@ public class ImmVisGameClient
         return await GetElementsFromResponseStream(call);
     }
 
+    public async Task<float> GetCorrelationBetweenTwoDimensions(string dimension1Name, string dimension2Name)
+    {
+        var dimension1 = CreateDimension(dimension1Name);
+
+        var dimension2 = CreateDimension(dimension2Name);
+
+        var correlationRequest = new CorrelationRequest(){
+            Dimension1 = dimension1,
+            Dimension2 = dimension2
+        };
+
+        var correlationResult = Client.GetCorrelationBetweenTwoDimensions(correlationRequest);
+
+        return correlationResult.Result;
+    }
+
+    public async Task<List<DataRow>> GetCorrelationMatrix()
+    {
+        var call = Client.GetCorrelationMatrix(new Void());
+
+        return await GetElementsFromResponseStream(call);
+    }
+
     private Dimension CreateDimension(string name)
     {
         return new Dimension()

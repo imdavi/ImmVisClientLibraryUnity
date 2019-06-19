@@ -21,6 +21,8 @@ public static partial class ImmVis
   static readonly grpc::Marshaller<global::KMeansRequest> __Marshaller_KMeansRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::KMeansRequest.Parser.ParseFrom);
   static readonly grpc::Marshaller<global::KMeansCentroid> __Marshaller_KMeansCentroid = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::KMeansCentroid.Parser.ParseFrom);
   static readonly grpc::Marshaller<global::DataRow> __Marshaller_DataRow = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::DataRow.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::CorrelationRequest> __Marshaller_CorrelationRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::CorrelationRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::FloatResult> __Marshaller_FloatResult = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FloatResult.Parser.ParseFrom);
 
   static readonly grpc::Method<global::OpenDatasetFileRequest, global::OpenDatasetFileResponse> __Method_OpenDatasetFile = new grpc::Method<global::OpenDatasetFileRequest, global::OpenDatasetFileResponse>(
       grpc::MethodType.Unary,
@@ -85,6 +87,20 @@ public static partial class ImmVis
       __Marshaller_Void,
       __Marshaller_DataRow);
 
+  static readonly grpc::Method<global::CorrelationRequest, global::FloatResult> __Method_GetCorrelationBetweenTwoDimensions = new grpc::Method<global::CorrelationRequest, global::FloatResult>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "GetCorrelationBetweenTwoDimensions",
+      __Marshaller_CorrelationRequest,
+      __Marshaller_FloatResult);
+
+  static readonly grpc::Method<global::Void, global::DataRow> __Method_GetCorrelationMatrix = new grpc::Method<global::Void, global::DataRow>(
+      grpc::MethodType.ServerStreaming,
+      __ServiceName,
+      "GetCorrelationMatrix",
+      __Marshaller_Void,
+      __Marshaller_DataRow);
+
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
   {
@@ -135,6 +151,16 @@ public static partial class ImmVis
     }
 
     public virtual global::System.Threading.Tasks.Task GetDatasetValues(global::Void request, grpc::IServerStreamWriter<global::DataRow> responseStream, grpc::ServerCallContext context)
+    {
+      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+    }
+
+    public virtual global::System.Threading.Tasks.Task<global::FloatResult> GetCorrelationBetweenTwoDimensions(global::CorrelationRequest request, grpc::ServerCallContext context)
+    {
+      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+    }
+
+    public virtual global::System.Threading.Tasks.Task GetCorrelationMatrix(global::Void request, grpc::IServerStreamWriter<global::DataRow> responseStream, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -260,6 +286,30 @@ public static partial class ImmVis
     {
       return CallInvoker.AsyncServerStreamingCall(__Method_GetDatasetValues, null, options, request);
     }
+    public virtual global::FloatResult GetCorrelationBetweenTwoDimensions(global::CorrelationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetCorrelationBetweenTwoDimensions(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    public virtual global::FloatResult GetCorrelationBetweenTwoDimensions(global::CorrelationRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_GetCorrelationBetweenTwoDimensions, null, options, request);
+    }
+    public virtual grpc::AsyncUnaryCall<global::FloatResult> GetCorrelationBetweenTwoDimensionsAsync(global::CorrelationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetCorrelationBetweenTwoDimensionsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    public virtual grpc::AsyncUnaryCall<global::FloatResult> GetCorrelationBetweenTwoDimensionsAsync(global::CorrelationRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_GetCorrelationBetweenTwoDimensions, null, options, request);
+    }
+    public virtual grpc::AsyncServerStreamingCall<global::DataRow> GetCorrelationMatrix(global::Void request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return GetCorrelationMatrix(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    public virtual grpc::AsyncServerStreamingCall<global::DataRow> GetCorrelationMatrix(global::Void request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncServerStreamingCall(__Method_GetCorrelationMatrix, null, options, request);
+    }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     protected override ImmVisClient NewInstance(ClientBaseConfiguration configuration)
     {
@@ -280,7 +330,9 @@ public static partial class ImmVis
         .AddMethod(__Method_GetOutlierMapping, serviceImpl.GetOutlierMapping)
         .AddMethod(__Method_GetKMeansCentroids, serviceImpl.GetKMeansCentroids)
         .AddMethod(__Method_GetKMeansClusterMapping, serviceImpl.GetKMeansClusterMapping)
-        .AddMethod(__Method_GetDatasetValues, serviceImpl.GetDatasetValues).Build();
+        .AddMethod(__Method_GetDatasetValues, serviceImpl.GetDatasetValues)
+        .AddMethod(__Method_GetCorrelationBetweenTwoDimensions, serviceImpl.GetCorrelationBetweenTwoDimensions)
+        .AddMethod(__Method_GetCorrelationMatrix, serviceImpl.GetCorrelationMatrix).Build();
   }
 
 }

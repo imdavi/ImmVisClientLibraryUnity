@@ -28,22 +28,28 @@ public static partial class ImmvisReflection {
           "BG5hbWUYASABKAkSDAoEdHlwZRgCIAEoCSI5Cg1EaW1lbnNpb25EYXRhEgwK",
           "BG5hbWUYASABKAkSDAoEdHlwZRgCIAEoCRIMCgRkYXRhGAMgAygJIigKB0Rh",
           "dGFSb3cSDQoFaW5kZXgYASABKAUSDgoGdmFsdWVzGAIgAygJIhkKCURpbWVu",
-          "c2lvbhIMCgRuYW1lGAEgASgJIkQKDUtNZWFuc1JlcXVlc3QSHgoKZGltZW5z",
-          "aW9ucxgBIAMoCzIKLkRpbWVuc2lvbhITCgtudW1DbHVzdGVycxgCIAEoBSIz",
-          "Cg5LTWVhbnNDZW50cm9pZBIMCgR0eXBlGAEgASgJEhMKC2Nvb3JkaW5hdGVz",
-          "GAIgAygJIjQKB0ZlYXR1cmUSDAoEbmFtZRgBIAEoCRINCgV2YWx1ZRgCIAEo",
-          "CRIMCgR0eXBlGAMgASgJMv4DCgZJbW1WaXMSRgoPT3BlbkRhdGFzZXRGaWxl",
-          "EhcuT3BlbkRhdGFzZXRGaWxlUmVxdWVzdBoYLk9wZW5EYXRhc2V0RmlsZVJl",
-          "c3BvbnNlIgASMQoUR2V0RGF0YXNldERpbWVuc2lvbnMSBS5Wb2lkGg4uRGlt",
-          "ZW5zaW9uSW5mbyIAMAESPQohR2V0RGltZW5zaW9uRGVzY3JpcHRpdmVTdGF0",
-          "aXN0aWNzEgouRGltZW5zaW9uGgguRmVhdHVyZSIAMAESMAoQR2V0RGltZW5z",
-          "aW9uSW5mbxIKLkRpbWVuc2lvbhoOLkRpbWVuc2lvbkluZm8iABI0ChBHZXRE",
-          "aW1lbnNpb25EYXRhEgouRGltZW5zaW9uGg4uRGltZW5zaW9uRGF0YSIAKAEw",
-          "ARIzChFHZXRPdXRsaWVyTWFwcGluZxIKLkRpbWVuc2lvbhoOLkRpbWVuc2lv",
-          "bkRhdGEiACgBEjkKEkdldEtNZWFuc0NlbnRyb2lkcxIOLktNZWFuc1JlcXVl",
-          "c3QaDy5LTWVhbnNDZW50cm9pZCIAMAESOwoXR2V0S01lYW5zQ2x1c3Rlck1h",
-          "cHBpbmcSDi5LTWVhbnNSZXF1ZXN0Gg4uRGltZW5zaW9uRGF0YSIAEiUKEEdl",
-          "dERhdGFzZXRWYWx1ZXMSBS5Wb2lkGgguRGF0YVJvdzABYgZwcm90bzM="));
+          "c2lvbhIMCgRuYW1lGAEgASgJIlQKEkNvcnJlbGF0aW9uUmVxdWVzdBIeCgpk",
+          "aW1lbnNpb24xGAEgASgLMgouRGltZW5zaW9uEh4KCmRpbWVuc2lvbjIYAiAB",
+          "KAsyCi5EaW1lbnNpb24iHQoLRmxvYXRSZXN1bHQSDgoGcmVzdWx0GAEgASgC",
+          "IkQKDUtNZWFuc1JlcXVlc3QSHgoKZGltZW5zaW9ucxgBIAMoCzIKLkRpbWVu",
+          "c2lvbhITCgtudW1DbHVzdGVycxgCIAEoBSIzCg5LTWVhbnNDZW50cm9pZBIM",
+          "CgR0eXBlGAEgASgJEhMKC2Nvb3JkaW5hdGVzGAIgAygJIjQKB0ZlYXR1cmUS",
+          "DAoEbmFtZRgBIAEoCRINCgV2YWx1ZRgCIAEoCRIMCgR0eXBlGAMgASgJMvYE",
+          "CgZJbW1WaXMSRgoPT3BlbkRhdGFzZXRGaWxlEhcuT3BlbkRhdGFzZXRGaWxl",
+          "UmVxdWVzdBoYLk9wZW5EYXRhc2V0RmlsZVJlc3BvbnNlIgASMQoUR2V0RGF0",
+          "YXNldERpbWVuc2lvbnMSBS5Wb2lkGg4uRGltZW5zaW9uSW5mbyIAMAESPQoh",
+          "R2V0RGltZW5zaW9uRGVzY3JpcHRpdmVTdGF0aXN0aWNzEgouRGltZW5zaW9u",
+          "GgguRmVhdHVyZSIAMAESMAoQR2V0RGltZW5zaW9uSW5mbxIKLkRpbWVuc2lv",
+          "bhoOLkRpbWVuc2lvbkluZm8iABI0ChBHZXREaW1lbnNpb25EYXRhEgouRGlt",
+          "ZW5zaW9uGg4uRGltZW5zaW9uRGF0YSIAKAEwARIzChFHZXRPdXRsaWVyTWFw",
+          "cGluZxIKLkRpbWVuc2lvbhoOLkRpbWVuc2lvbkRhdGEiACgBEjkKEkdldEtN",
+          "ZWFuc0NlbnRyb2lkcxIOLktNZWFuc1JlcXVlc3QaDy5LTWVhbnNDZW50cm9p",
+          "ZCIAMAESOwoXR2V0S01lYW5zQ2x1c3Rlck1hcHBpbmcSDi5LTWVhbnNSZXF1",
+          "ZXN0Gg4uRGltZW5zaW9uRGF0YSIAEicKEEdldERhdGFzZXRWYWx1ZXMSBS5W",
+          "b2lkGgguRGF0YVJvdyIAMAESSQoiR2V0Q29ycmVsYXRpb25CZXR3ZWVuVHdv",
+          "RGltZW5zaW9ucxITLkNvcnJlbGF0aW9uUmVxdWVzdBoMLkZsb2F0UmVzdWx0",
+          "IgASKQoUR2V0Q29ycmVsYXRpb25NYXRyaXgSBS5Wb2lkGgguRGF0YVJvdzAB",
+          "YgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -54,6 +60,8 @@ public static partial class ImmvisReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::DimensionData), global::DimensionData.Parser, new[]{ "Name", "Type", "Data" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DataRow), global::DataRow.Parser, new[]{ "Index", "Values" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Dimension), global::Dimension.Parser, new[]{ "Name" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CorrelationRequest), global::CorrelationRequest.Parser, new[]{ "Dimension1", "Dimension2" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::FloatResult), global::FloatResult.Parser, new[]{ "Result" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::KMeansRequest), global::KMeansRequest.Parser, new[]{ "Dimensions", "NumClusters" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::KMeansCentroid), global::KMeansCentroid.Parser, new[]{ "Type", "Coordinates" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Feature), global::Feature.Parser, new[]{ "Name", "Value", "Type" }, null, null, null)
@@ -1034,6 +1042,304 @@ public sealed partial class Dimension : pb::IMessage<Dimension> {
 
 }
 
+public sealed partial class CorrelationRequest : pb::IMessage<CorrelationRequest> {
+  private static readonly pb::MessageParser<CorrelationRequest> _parser = new pb::MessageParser<CorrelationRequest>(() => new CorrelationRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<CorrelationRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[7]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CorrelationRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CorrelationRequest(CorrelationRequest other) : this() {
+    Dimension1 = other.dimension1_ != null ? other.Dimension1.Clone() : null;
+    Dimension2 = other.dimension2_ != null ? other.Dimension2.Clone() : null;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CorrelationRequest Clone() {
+    return new CorrelationRequest(this);
+  }
+
+  /// <summary>Field number for the "dimension1" field.</summary>
+  public const int Dimension1FieldNumber = 1;
+  private global::Dimension dimension1_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Dimension Dimension1 {
+    get { return dimension1_; }
+    set {
+      dimension1_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "dimension2" field.</summary>
+  public const int Dimension2FieldNumber = 2;
+  private global::Dimension dimension2_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Dimension Dimension2 {
+    get { return dimension2_; }
+    set {
+      dimension2_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as CorrelationRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(CorrelationRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (!object.Equals(Dimension1, other.Dimension1)) return false;
+    if (!object.Equals(Dimension2, other.Dimension2)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (dimension1_ != null) hash ^= Dimension1.GetHashCode();
+    if (dimension2_ != null) hash ^= Dimension2.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (dimension1_ != null) {
+      output.WriteRawTag(10);
+      output.WriteMessage(Dimension1);
+    }
+    if (dimension2_ != null) {
+      output.WriteRawTag(18);
+      output.WriteMessage(Dimension2);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (dimension1_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dimension1);
+    }
+    if (dimension2_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Dimension2);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(CorrelationRequest other) {
+    if (other == null) {
+      return;
+    }
+    if (other.dimension1_ != null) {
+      if (dimension1_ == null) {
+        dimension1_ = new global::Dimension();
+      }
+      Dimension1.MergeFrom(other.Dimension1);
+    }
+    if (other.dimension2_ != null) {
+      if (dimension2_ == null) {
+        dimension2_ = new global::Dimension();
+      }
+      Dimension2.MergeFrom(other.Dimension2);
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          if (dimension1_ == null) {
+            dimension1_ = new global::Dimension();
+          }
+          input.ReadMessage(dimension1_);
+          break;
+        }
+        case 18: {
+          if (dimension2_ == null) {
+            dimension2_ = new global::Dimension();
+          }
+          input.ReadMessage(dimension2_);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class FloatResult : pb::IMessage<FloatResult> {
+  private static readonly pb::MessageParser<FloatResult> _parser = new pb::MessageParser<FloatResult>(() => new FloatResult());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<FloatResult> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[8]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public FloatResult() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public FloatResult(FloatResult other) : this() {
+    result_ = other.result_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public FloatResult Clone() {
+    return new FloatResult(this);
+  }
+
+  /// <summary>Field number for the "result" field.</summary>
+  public const int ResultFieldNumber = 1;
+  private float result_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public float Result {
+    get { return result_; }
+    set {
+      result_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as FloatResult);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(FloatResult other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Result, other.Result)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Result != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Result);
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Result != 0F) {
+      output.WriteRawTag(13);
+      output.WriteFloat(Result);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Result != 0F) {
+      size += 1 + 4;
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(FloatResult other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Result != 0F) {
+      Result = other.Result;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 13: {
+          Result = input.ReadFloat();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class KMeansRequest : pb::IMessage<KMeansRequest> {
   private static readonly pb::MessageParser<KMeansRequest> _parser = new pb::MessageParser<KMeansRequest>(() => new KMeansRequest());
   private pb::UnknownFieldSet _unknownFields;
@@ -1042,7 +1348,7 @@ public sealed partial class KMeansRequest : pb::IMessage<KMeansRequest> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[7]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[9]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1191,7 +1497,7 @@ public sealed partial class KMeansCentroid : pb::IMessage<KMeansCentroid> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[8]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[10]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1340,7 +1646,7 @@ public sealed partial class Feature : pb::IMessage<Feature> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[9]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[11]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
