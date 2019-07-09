@@ -263,6 +263,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1132725282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4957424121725869144, guid: 1d3c04eebe71117c49472f98938b2f5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3164950228226851570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1828406695
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immvisManager: {fileID: 51009457229656840}
-  datasetFilePath: "./example_datasets/IRIS.csv\x13"
 --- !u!4 &1828406697
 Transform:
   m_ObjectHideFlags: 0
@@ -301,12 +306,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828406695}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1132725282}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &51009457229656840 stripped
 MonoBehaviour:
@@ -386,6 +391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 51009457229656840, guid: 1d3c04eebe71117c49472f98938b2f5e,
+        type: 3}
+      propertyPath: AutoDiscoverServer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3c04eebe71117c49472f98938b2f5e, type: 3}

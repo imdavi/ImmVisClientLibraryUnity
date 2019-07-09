@@ -4,23 +4,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
+using UnityEngine.EventSystems;
 
 public class ImmVisManager : MonoBehaviour
 {
-    public ImmVisGameClient Client { get;  private set; }
+    private ImmVisDiscoveryService DiscoveryService { get; set; }
 
-    private void Awake()
+    internal void RegisterToBroadcast(GameObject gameObject)
     {
-        Client = new ImmVisGameClient();
-        Client.Initialize();
+        gameObject.transform.parent = this.gameObject.transform;
     }
 
+    public ImmVisGameClient Client { get; private set; }
+
+    private const string ImmVisReadyBroadcastMethodName = "OnImmVisReady";
+
+    public bool AutoDiscoverServer = true;
+
+    public String Host = ImmVisGameClient.DefaultHost;
+
+    public int Port = ImmVisGameClient.DefaultPort;
+
+    private CancellationTokenSource cts = new CancellationTokenSource();
+
+    private async void Awake()
+    {
+        if (AutoDiscoverServer)
+        {
+            InitializeWithAutoDiscovery();
+        }
+        else
+        {
+            InitializeGameClient(Host, Port);
+        }
+    }
+
+    private async void InitializeWithAutoDiscovery()
+    {
+        DiscoveryService = new ImmVisDiscoveryService(cts.Token);
+
+        var servers = await DiscoveryService.SearchForAvailableServers();
+
+        if (servers.Count > 0)
+        {
+            InitializeGameClient(servers[0]);
+        }
+        else
+        {
+            Debug.Log("Could not find any available ImmVis servers... Did you forget to start something?");
+        }
+    }
+
+    private void InitializeGameClient(string host = ImmVisGameClient.DefaultTarget, int port = ImmVisGameClient.DefaultPort)
+    {
+        Client = new ImmVisGameClient(host, port);
+        Client.Initialize();
+        BroadcastMessage(ImmVisReadyBroadcastMethodName);
+    }
     void OnApplicationQuit()
     {
         if (Client != null)
         {
             Client.Release();
             Client = null;
+        }
+
+        cts.Cancel();
+
+        if(DiscoveryService != null) 
+        {
+            DiscoveryService = null;
         }
     }
 
@@ -64,5 +118,10 @@ public class ImmVisManager : MonoBehaviour
     public async Task<List<Feature>> GetDescriptiveStatistics(string dimensionName)
     {
         return await Client.GetDimensionDescriptiveStatistics(dimensionName);
+    }
+
+    public interface ImmVisEventTarget 
+    {
+        void OnImmVisReady();
     }
 }

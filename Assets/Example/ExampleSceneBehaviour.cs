@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExampleSceneBehaviour : MonoBehaviour
+public class ExampleSceneBehaviour : MonoBehaviour, ImmVisManager.ImmVisEventTarget
 {
     public ImmVisManager immvisManager;
 
-    // Start is called before the first frame update
-    async void Start()
+    void Awake()
+    {
+        immvisManager.RegisterToBroadcast(gameObject);       
+    }
+
+    public async void OnImmVisReady()
     {
         var result = await immvisManager.Client.OpenDatasetFromFile("./example_datasets/IRIS.csv");
 
@@ -32,12 +36,12 @@ public class ExampleSceneBehaviour : MonoBehaviour
             for (int i = 0; i < correlationMatrix.Count; i++)
             {
                 var dataRow = correlationMatrix[i];
-                
+
                 Debug.Log("Correlation Matrix:");
 
                 for (int j = 0; j < dataRow.Values.Count; j++)
                 {
-                    Debug.Log($"[{i}][{j}] {dataRow.Values[j]}");    
+                    Debug.Log($"[{i}][{j}] {dataRow.Values[j]}");
                 }
             }
 

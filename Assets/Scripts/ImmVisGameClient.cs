@@ -9,7 +9,11 @@ using Google.Protobuf.Collections;
 
 public class ImmVisGameClient
 {
-    private const string DEFAULT_TARGET = "127.0.0.1:50051";
+    public const int DefaultPort = 50051;
+
+    public const string DefaultHost = "127.0.0.1";
+
+    public const string DefaultTarget = "127.0.0.1:50051";
 
     public string Target { get; private set; }
 
@@ -17,18 +21,19 @@ public class ImmVisGameClient
 
     public ImmVis.ImmVisClient Client { get; private set; }
 
-    public ImmVisGameClient() : this(DEFAULT_TARGET) { }
+    public ImmVisGameClient(string host = DefaultHost, int port = DefaultPort) :
+        this($"{(host != null && host != "" ? host : DefaultHost)}:{port}")
+    { }
 
-    public ImmVisGameClient(string target)
+    public ImmVisGameClient(string target = DefaultTarget)
     {
-        Target = target;
+        Target = target != null && target != "" ? target : $"{DefaultHost}:{DefaultPort}";
     }
 
     public void Initialize()
     {
         Release();
-        var target = Target != null && Target != "" ? Target : DEFAULT_TARGET;
-        Channel = new Channel(target, ChannelCredentials.Insecure);
+        Channel = new Channel(Target, ChannelCredentials.Insecure);
         Client = new ImmVis.ImmVisClient(Channel);
     }
 
@@ -156,7 +161,8 @@ public class ImmVisGameClient
 
         var dimension2 = CreateDimension(dimension2Name);
 
-        var correlationRequest = new CorrelationRequest(){
+        var correlationRequest = new CorrelationRequest()
+        {
             Dimension1 = dimension1,
             Dimension2 = dimension2
         };
