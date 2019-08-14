@@ -17,9 +17,18 @@ public class ImmVisGameClient
 
     public string Target { get; private set; }
 
-    public Channel Channel { get; private set; }
+    private Channel Channel { get; set; }
 
-    public ImmVis.ImmVisClient Client { get; private set; }
+    private ImmVis.ImmVisClient Client { get; set; }
+
+    public bool IsReady
+    {
+        get
+        {
+            return Channel.State == ChannelState.Ready;
+        }
+
+    }
 
     public ImmVisGameClient(string host = DefaultHost, int port = DefaultPort) :
         this($"{(host != null && host != "" ? host : DefaultHost)}:{port}")
