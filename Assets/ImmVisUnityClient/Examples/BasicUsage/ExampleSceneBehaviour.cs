@@ -31,6 +31,20 @@ public class ExampleSceneBehaviour : MonoBehaviour, ImmVisManager.ImmVisEventTar
                 }
             }
 
+            var dataRows = await immvisManager.Client.GetDatasetValues();
+
+            foreach (var dataRow in dataRows)
+            {
+                Debug.Log($"Line {dataRow.Index}");
+
+                foreach (var value in dataRow.Values)
+                {
+                    Debug.Log($"{value}");
+                }
+                
+                Debug.Log("----");
+            }
+
             var correlationMatrix = await immvisManager.Client.GetCorrelationMatrix();
 
             for (int i = 0; i < correlationMatrix.Count; i++)

@@ -76,7 +76,7 @@ public class ImmVisGameClient
     {
         var call = Client.GetDatasetDimensions(new Void());
 
-        return await GetElementsFromResponseStream(call);
+        return await GetElementsFromResponseStream(call.ResponseStream);
     }
 
     public async Task<List<Feature>> GetDimensionDescriptiveStatistics(string name)
@@ -85,7 +85,7 @@ public class ImmVisGameClient
 
         var call = Client.GetDimensionDescriptiveStatistics(dimension);
 
-        return await GetElementsFromResponseStream(call);
+        return await GetElementsFromResponseStream(call.ResponseStream);
     }
 
     public async Task<DimensionInfo> GetDimensionInfo(string name)
@@ -124,7 +124,7 @@ public class ImmVisGameClient
 
         var call = Client.GetKMeansCentroids(kMeansRequest);
 
-        return await GetElementsFromResponseStream(call);
+        return await GetElementsFromResponseStream(call.ResponseStream);
     }
 
     public async Task<List<int>> GetKMeansClusterMapping(int numClusters, params string[] dimensionsNames)
@@ -154,14 +154,14 @@ public class ImmVisGameClient
 
         await call.RequestStream.CompleteAsync();
 
-        return await GetElementsFromResponseStream(call);
+        return await GetElementsFromResponseStream(call.ResponseStream);
     }
 
     public async Task<List<DataRow>> GetDatasetValues()
     {
         var call = Client.GetDatasetValues(new Void());
 
-        return await GetElementsFromResponseStream(call);
+        return await GetElementsFromResponseStream(call.ResponseStream);
     }
 
     public async Task<float> GetCorrelationBetweenTwoDimensions(string dimension1Name, string dimension2Name)
@@ -185,7 +185,7 @@ public class ImmVisGameClient
     {
         var call = Client.GetCorrelationMatrix(new Void());
 
-        return await GetElementsFromResponseStream(call);
+        return await GetElementsFromResponseStream(call.ResponseStream);
     }
 
     private Dimension CreateDimension(string name)
@@ -196,27 +196,14 @@ public class ImmVisGameClient
         };
     }
 
-    private async Task<List<T>> GetElementsFromResponseStream<T>(AsyncServerStreamingCall<T> call)
+    private async Task<List<T>> GetElementsFromResponseStream<T>(IAsyncStreamReader<T> responseStream) where T : class
     {
         var elements = new List<T>();
 
-        while (await call.ResponseStream.MoveNext())
+        while (await responseStream.MoveNext<T>())
         {
-            T dimensionInfo = call.ResponseStream.Current;
+            T dimensionInfo = responseStream.Current;
             elements.Add(dimensionInfo);
-        }
-
-        return elements;
-    }
-
-    private async Task<List<U>> GetElementsFromResponseStream<T, U>(AsyncDuplexStreamingCall<T, U> call)
-    {
-        var elements = new List<U>();
-
-        while (await call.ResponseStream.MoveNext())
-        {
-            U element = call.ResponseStream.Current;
-            elements.Add(element);
         }
 
         return elements;

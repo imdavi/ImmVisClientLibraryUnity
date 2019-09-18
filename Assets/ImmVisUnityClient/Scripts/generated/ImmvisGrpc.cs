@@ -108,6 +108,7 @@ public static partial class ImmVis
   }
 
   /// <summary>Base class for server-side implementations of ImmVis</summary>
+  [grpc::BindServiceMethod(typeof(ImmVis), "BindService")]
   public abstract partial class ImmVisBase
   {
     public virtual global::System.Threading.Tasks.Task<global::OpenDatasetFileResponse> OpenDatasetFile(global::OpenDatasetFileRequest request, grpc::ServerCallContext context)
@@ -172,7 +173,7 @@ public static partial class ImmVis
   {
     /// <summary>Creates a new client for ImmVis</summary>
     /// <param name="channel">The channel to use to make remote calls.</param>
-    public ImmVisClient(grpc::Channel channel) : base(channel)
+    public ImmVisClient(grpc::ChannelBase channel) : base(channel)
     {
     }
     /// <summary>Creates a new client for ImmVis that uses a custom <c>CallInvoker</c>.</summary>
@@ -333,6 +334,25 @@ public static partial class ImmVis
         .AddMethod(__Method_GetDatasetValues, serviceImpl.GetDatasetValues)
         .AddMethod(__Method_GetCorrelationBetweenTwoDimensions, serviceImpl.GetCorrelationBetweenTwoDimensions)
         .AddMethod(__Method_GetCorrelationMatrix, serviceImpl.GetCorrelationMatrix).Build();
+  }
+
+  /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+  /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+  /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+  /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+  public static void BindService(grpc::ServiceBinderBase serviceBinder, ImmVisBase serviceImpl)
+  {
+    serviceBinder.AddMethod(__Method_OpenDatasetFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::OpenDatasetFileRequest, global::OpenDatasetFileResponse>(serviceImpl.OpenDatasetFile));
+    serviceBinder.AddMethod(__Method_GetDatasetDimensions, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Void, global::DimensionInfo>(serviceImpl.GetDatasetDimensions));
+    serviceBinder.AddMethod(__Method_GetDimensionDescriptiveStatistics, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Dimension, global::Feature>(serviceImpl.GetDimensionDescriptiveStatistics));
+    serviceBinder.AddMethod(__Method_GetDimensionInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Dimension, global::DimensionInfo>(serviceImpl.GetDimensionInfo));
+    serviceBinder.AddMethod(__Method_GetDimensionData, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Dimension, global::DimensionData>(serviceImpl.GetDimensionData));
+    serviceBinder.AddMethod(__Method_GetOutlierMapping, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::Dimension, global::DimensionData>(serviceImpl.GetOutlierMapping));
+    serviceBinder.AddMethod(__Method_GetKMeansCentroids, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::KMeansRequest, global::KMeansCentroid>(serviceImpl.GetKMeansCentroids));
+    serviceBinder.AddMethod(__Method_GetKMeansClusterMapping, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::KMeansRequest, global::DimensionData>(serviceImpl.GetKMeansClusterMapping));
+    serviceBinder.AddMethod(__Method_GetDatasetValues, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Void, global::DataRow>(serviceImpl.GetDatasetValues));
+    serviceBinder.AddMethod(__Method_GetCorrelationBetweenTwoDimensions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CorrelationRequest, global::FloatResult>(serviceImpl.GetCorrelationBetweenTwoDimensions));
+    serviceBinder.AddMethod(__Method_GetCorrelationMatrix, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Void, global::DataRow>(serviceImpl.GetCorrelationMatrix));
   }
 
 }

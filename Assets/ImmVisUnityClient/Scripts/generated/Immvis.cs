@@ -1067,8 +1067,8 @@ public sealed partial class CorrelationRequest : pb::IMessage<CorrelationRequest
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public CorrelationRequest(CorrelationRequest other) : this() {
-    Dimension1 = other.dimension1_ != null ? other.Dimension1.Clone() : null;
-    Dimension2 = other.dimension2_ != null ? other.Dimension2.Clone() : null;
+    dimension1_ = other.dimension1_ != null ? other.dimension1_.Clone() : null;
+    dimension2_ = other.dimension2_ != null ? other.dimension2_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -1170,13 +1170,13 @@ public sealed partial class CorrelationRequest : pb::IMessage<CorrelationRequest
     }
     if (other.dimension1_ != null) {
       if (dimension1_ == null) {
-        dimension1_ = new global::Dimension();
+        Dimension1 = new global::Dimension();
       }
       Dimension1.MergeFrom(other.Dimension1);
     }
     if (other.dimension2_ != null) {
       if (dimension2_ == null) {
-        dimension2_ = new global::Dimension();
+        Dimension2 = new global::Dimension();
       }
       Dimension2.MergeFrom(other.Dimension2);
     }
@@ -1193,16 +1193,16 @@ public sealed partial class CorrelationRequest : pb::IMessage<CorrelationRequest
           break;
         case 10: {
           if (dimension1_ == null) {
-            dimension1_ = new global::Dimension();
+            Dimension1 = new global::Dimension();
           }
-          input.ReadMessage(dimension1_);
+          input.ReadMessage(Dimension1);
           break;
         }
         case 18: {
           if (dimension2_ == null) {
-            dimension2_ = new global::Dimension();
+            Dimension2 = new global::Dimension();
           }
-          input.ReadMessage(dimension2_);
+          input.ReadMessage(Dimension2);
           break;
         }
       }
