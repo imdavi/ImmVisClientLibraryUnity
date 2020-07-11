@@ -1,76 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
+using ImmVis.Grpc;
 using UnityEngine;
 
-public class ExampleSceneBehaviour : MonoBehaviour, ImmVisManager.ImmVisEventTarget
+public class ExampleSceneBehaviour : MonoBehaviour
 {
-    public ImmVisManager immvisManager;
+    public ImmVisGrpcClientManager immVisGrpcClientManager;
 
-    void Awake()
+    void Start()
     {
-        immvisManager.RegisterToBroadcast(gameObject);       
-    }
-
-    public async void OnImmVisReady()
-    {
-        var result = await immvisManager.Client.OpenDatasetFromFile("./example_datasets/IRIS.csv");
-
-        if (result == 0)
+        if (immVisGrpcClientManager != null)
         {
-            var dimensions = await immvisManager.Client.GetDatasetDimensions();
-
-            foreach (var dimension in dimensions)
-            {
-                Debug.Log($"{dimension.Name} - {dimension.Type}");
-
-                var features = await immvisManager.Client.GetDimensionDescriptiveStatistics(dimension.Name);
-
-                foreach (var feature in features)
-                {
-                    Debug.Log($"{feature.Name}: {feature.Value}");
-                }
-            }
-
-            var dataRows = await immvisManager.Client.GetDatasetValues();
-
-            foreach (var dataRow in dataRows)
-            {
-                Debug.Log($"Line {dataRow.Index}");
-
-                foreach (var value in dataRow.Values)
-                {
-                    Debug.Log($"{value}");
-                }
-                
-                Debug.Log("----");
-            }
-
-            var correlationMatrix = await immvisManager.Client.GetCorrelationMatrix();
-
-            for (int i = 0; i < correlationMatrix.Count; i++)
-            {
-                var dataRow = correlationMatrix[i];
-
-                Debug.Log("Correlation Matrix:");
-
-                for (int j = 0; j < dataRow.Values.Count; j++)
-                {
-                    Debug.Log($"[{i}][{j}] {dataRow.Values[j]}");
-                }
-            }
-
-            var d1 = "sepal_length";
-            var d2 = "sepal_width";
-            var correlation = await immvisManager.Client.GetCorrelationBetweenTwoDimensions(d1, d2);
-
-            Debug.Log($"Correlation between {d1} and {d2}: {correlation}");
-
+            immVisGrpcClientManager.ClientInitialized += ClientIsReady;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private async void ClientIsReady()
     {
+        Debug.Log("The GrpcClient is ready to play!");
 
+        var grpcClient = immVisGrpcClientManager.GrpcClient;
+
+        var availableDatasets = await grpcClient.ListAvailableDatasetsAsync(new Empty());
+
+        var datasetsPaths = availableDatasets.DatasetsPaths;
+
+        if (datasetsPaths.Count > 0)
+        {
+            var datasetPath = datasetsPaths[0];
+
+            var datasetMetadata = await grpcClient.LoadDatasetAsync(new LoadDatasetRequestMessage()
+            {
+                DatasetPath = datasetPath
+            });
+
+            var datasetInfoStringBuilder = new StringBuilder();
+
+            datasetInfoStringBuilder.AppendLine($"Dataset \"{datasetPath}\" ({datasetMetadata.RowsCount} rows x {datasetMetadata.ColumnsCount} columns)");
+            datasetInfoStringBuilder.AppendLine("Colums:");
+            foreach (var columnInfo in datasetMetadata.ColumnsInfo)
+            {
+                datasetInfoStringBuilder.AppendLine($"\t{columnInfo.Column.ColumnName} ({columnInfo.Column.Type})");
+            }
+
+            Debug.Log($"Loaded a dataset:\n{datasetInfoStringBuilder.ToString()}");
+        }
+        else
+        {
+            Debug.Log("There are no datasets available. :(");
+        }
     }
 }

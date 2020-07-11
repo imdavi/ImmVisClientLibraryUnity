@@ -1814,6 +1814,8 @@
         <member name="M:Grpc.Core.RpcException.#ctor(Grpc.Core.Status,System.String)">
             <summary>
             Creates a new <c>RpcException</c> associated with given status and message.
+            NOTE: the exception message is not sent to the remote peer. Use <c>status.Details</c> to pass error
+            details to the peer.
             </summary>
             <param name="status">Resulting status of a call.</param>
             <param name="message">The exception message.</param> 
@@ -1828,6 +1830,8 @@
         <member name="M:Grpc.Core.RpcException.#ctor(Grpc.Core.Status,Grpc.Core.Metadata,System.String)">
             <summary>
             Creates a new <c>RpcException</c> associated with given status, message and trailing response metadata.
+            NOTE: the exception message is not sent to the remote peer. Use <c>status.Details</c> to pass error
+            details to the peer.
             </summary>
             <param name="status">Resulting status of a call.</param>
             <param name="trailers">Response trailing metadata.</param>
@@ -1869,6 +1873,16 @@
             <c>Complete()</c> needs to be called.
             </summary>
         </member>
+        <member name="M:Grpc.Core.SerializationContext.SetPayloadLength(System.Int32)">
+            <summary>
+            Sets the payload length when writing serialized data into a buffer writer. If the serializer knows the full payload
+            length in advance, providing that information before obtaining the buffer writer using <c>GetBufferWriter()</c> can improve
+            serialization efficiency by avoiding copies. The provided payload length must be the same as the data written to the writer.
+            Calling this method is optional. If the payload length is not set then the length is calculated using the data written to
+            the buffer writer when <c>Complete()</c> is called.
+            </summary>
+            <param name="payloadLength">The total length of the payload in bytes.</param>
+        </member>
         <member name="M:Grpc.Core.SerializationContext.Complete">
             <summary>
             Complete the payload written to the buffer writer. <c>Complete()</c> can only be called once.
@@ -1908,13 +1922,13 @@
             <summary>Address of the remote endpoint in URI format.</summary>
         </member>
         <member name="P:Grpc.Core.ServerCallContext.Deadline">
-            <summary>Deadline for this RPC.</summary>
+            <summary>Deadline for this RPC. The call will be automatically cancelled once the deadline is exceeded.</summary>
         </member>
         <member name="P:Grpc.Core.ServerCallContext.RequestHeaders">
             <summary>Initial metadata sent by client.</summary>
         </member>
         <member name="P:Grpc.Core.ServerCallContext.CancellationToken">
-            <summary>Cancellation token signals when call is cancelled.</summary>
+            <summary>Cancellation token signals when call is cancelled. It is also triggered when the deadline is exceeeded or there was some other error (e.g. network problem).</summary>
         </member>
         <member name="P:Grpc.Core.ServerCallContext.ResponseTrailers">
             <summary>Trailers to send back to client after RPC finishes.</summary>
