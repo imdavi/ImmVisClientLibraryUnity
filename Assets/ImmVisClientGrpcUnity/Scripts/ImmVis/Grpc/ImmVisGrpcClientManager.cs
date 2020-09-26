@@ -56,7 +56,7 @@ namespace ImmVis.Grpc
         {
             if (availableServersIps.Count > 0)
             {
-                InitializeGrpcClient();
+                InitializeGrpcClient(host: availableServersIps[0]);
             }
         }
 
