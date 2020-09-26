@@ -30,7 +30,7 @@ public class ExampleSceneBehaviour : MonoBehaviour
         {
             var datasetPath = datasetsPaths[0];
 
-            var datasetMetadata = await grpcClient.LoadDatasetAsync(new LoadDatasetRequestMessage()
+            var datasetMetadata = await grpcClient.LoadDatasetAsync(new LoadDatasetRequest()
             {
                 DatasetPath = datasetPath
             });

@@ -23,36 +23,36 @@ public static partial class ImmvisReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "CgxpbW12aXMucHJvdG8iBwoFRW1wdHkiLgoVQXZhaWxhYmxlRGF0YXNldHNM",
-          "aXN0EhUKDWRhdGFzZXRzUGF0aHMYASADKAkiMAoZTG9hZERhdGFzZXRSZXF1",
-          "ZXN0TWVzc2FnZRITCgtkYXRhc2V0UGF0aBgBIAEoCSIqCgZDb2x1bW4SEgoK",
-          "Y29sdW1uTmFtZRgBIAEoCRIMCgR0eXBlGAIgASgJIlAKHERlc2NyaXB0aXZl",
-          "U3RhdGlzdGljc0ZlYXR1cmUSDAoEbmFtZRgBIAEoCRINCgV2YWx1ZRgCIAEo",
-          "CRITCgtmZWF0dXJlVHlwZRgDIAEoCSJrCgpDb2x1bW5JbmZvEhcKBmNvbHVt",
-          "bhgBIAEoCzIHLkNvbHVtbhJECh1kZXNjcmlwdGl2ZVN0YXRpc3RpY3NGZWF0",
-          "dXJlcxgCIAMoCzIdLkRlc2NyaXB0aXZlU3RhdGlzdGljc0ZlYXR1cmUiXAoP",
-          "RGF0YXNldE1ldGFkYXRhEhEKCXJvd3NDb3VudBgBIAEoBRIUCgxjb2x1bW5z",
-          "Q291bnQYAiABKAUSIAoLY29sdW1uc0luZm8YAyADKAsyCy5Db2x1bW5JbmZv",
-          "IjYKHkdldERhdGFzZXRUb1Bsb3RSZXF1ZXN0TWVzc2FnZRIUCgxjb2x1bW5z",
-          "TmFtZXMYASADKAkiKgoNRGF0YXNldFRvUGxvdBIZCgRyb3dzGAEgAygLMgsu",
-          "RGF0YXNldFJvdyIfCgpEYXRhc2V0Um93EhEKCXJvd1ZhbHVlcxgBIAMoAjLP",
-          "AQoMSW1tVmlzUGFuZGFzEjkKFUxpc3RBdmFpbGFibGVEYXRhc2V0cxIGLkVt",
-          "cHR5GhYuQXZhaWxhYmxlRGF0YXNldHNMaXN0IgASPQoLTG9hZERhdGFzZXQS",
-          "Gi5Mb2FkRGF0YXNldFJlcXVlc3RNZXNzYWdlGhAuRGF0YXNldE1ldGFkYXRh",
-          "IgASRQoQR2V0RGF0YXNldFRvUGxvdBIfLkdldERhdGFzZXRUb1Bsb3RSZXF1",
-          "ZXN0TWVzc2FnZRoOLkRhdGFzZXRUb1Bsb3QiAGIGcHJvdG8z"));
+          "aXN0EhUKDWRhdGFzZXRzUGF0aHMYASADKAkiKQoSTG9hZERhdGFzZXRSZXF1",
+          "ZXN0EhMKC2RhdGFzZXRQYXRoGAEgASgJIioKBkNvbHVtbhISCgpjb2x1bW5O",
+          "YW1lGAEgASgJEgwKBHR5cGUYAiABKAkiUAocRGVzY3JpcHRpdmVTdGF0aXN0",
+          "aWNzRmVhdHVyZRIMCgRuYW1lGAEgASgJEg0KBXZhbHVlGAIgASgJEhMKC2Zl",
+          "YXR1cmVUeXBlGAMgASgJImsKCkNvbHVtbkluZm8SFwoGY29sdW1uGAEgASgL",
+          "MgcuQ29sdW1uEkQKHWRlc2NyaXB0aXZlU3RhdGlzdGljc0ZlYXR1cmVzGAIg",
+          "AygLMh0uRGVzY3JpcHRpdmVTdGF0aXN0aWNzRmVhdHVyZSJcCg9EYXRhc2V0",
+          "TWV0YWRhdGESEQoJcm93c0NvdW50GAEgASgFEhQKDGNvbHVtbnNDb3VudBgC",
+          "IAEoBRIgCgtjb2x1bW5zSW5mbxgDIAMoCzILLkNvbHVtbkluZm8iMwobR2V0",
+          "Tm9ybWFsaXNlZERhdGFzZXRSZXF1ZXN0EhQKDGNvbHVtbnNOYW1lcxgBIAMo",
+          "CSIxChFOb3JtYWxpc2VkRGF0YXNldBIcCgRyb3dzGAEgAygLMg4uTm9ybWFs",
+          "aXNlZFJvdyIfCg1Ob3JtYWxpc2VkUm93Eg4KBnZhbHVlcxgBIAMoAjLNAQoM",
+          "SW1tVmlzUGFuZGFzEjkKFUxpc3RBdmFpbGFibGVEYXRhc2V0cxIGLkVtcHR5",
+          "GhYuQXZhaWxhYmxlRGF0YXNldHNMaXN0IgASNgoLTG9hZERhdGFzZXQSEy5M",
+          "b2FkRGF0YXNldFJlcXVlc3QaEC5EYXRhc2V0TWV0YWRhdGEiABJKChRHZXRO",
+          "b3JtYWxpc2VkRGF0YXNldBIcLkdldE5vcm1hbGlzZWREYXRhc2V0UmVxdWVz",
+          "dBoSLk5vcm1hbGlzZWREYXRhc2V0IgBiBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::Empty), global::Empty.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::AvailableDatasetsList), global::AvailableDatasetsList.Parser, new[]{ "DatasetsPaths" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::LoadDatasetRequestMessage), global::LoadDatasetRequestMessage.Parser, new[]{ "DatasetPath" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::LoadDatasetRequest), global::LoadDatasetRequest.Parser, new[]{ "DatasetPath" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Column), global::Column.Parser, new[]{ "ColumnName", "Type" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DescriptiveStatisticsFeature), global::DescriptiveStatisticsFeature.Parser, new[]{ "Name", "Value", "FeatureType" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ColumnInfo), global::ColumnInfo.Parser, new[]{ "Column", "DescriptiveStatisticsFeatures" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DatasetMetadata), global::DatasetMetadata.Parser, new[]{ "RowsCount", "ColumnsCount", "ColumnsInfo" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetDatasetToPlotRequestMessage), global::GetDatasetToPlotRequestMessage.Parser, new[]{ "ColumnsNames" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::DatasetToPlot), global::DatasetToPlot.Parser, new[]{ "Rows" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::DatasetRow), global::DatasetRow.Parser, new[]{ "RowValues" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::GetNormalisedDatasetRequest), global::GetNormalisedDatasetRequest.Parser, new[]{ "ColumnsNames" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::NormalisedDataset), global::NormalisedDataset.Parser, new[]{ "Rows" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::NormalisedRow), global::NormalisedRow.Parser, new[]{ "Values" }, null, null, null)
         }));
   }
   #endregion
@@ -281,11 +281,11 @@ public sealed partial class AvailableDatasetsList : pb::IMessage<AvailableDatase
 
 }
 
-public sealed partial class LoadDatasetRequestMessage : pb::IMessage<LoadDatasetRequestMessage> {
-  private static readonly pb::MessageParser<LoadDatasetRequestMessage> _parser = new pb::MessageParser<LoadDatasetRequestMessage>(() => new LoadDatasetRequestMessage());
+public sealed partial class LoadDatasetRequest : pb::IMessage<LoadDatasetRequest> {
+  private static readonly pb::MessageParser<LoadDatasetRequest> _parser = new pb::MessageParser<LoadDatasetRequest>(() => new LoadDatasetRequest());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<LoadDatasetRequestMessage> Parser { get { return _parser; } }
+  public static pb::MessageParser<LoadDatasetRequest> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -298,21 +298,21 @@ public sealed partial class LoadDatasetRequestMessage : pb::IMessage<LoadDataset
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public LoadDatasetRequestMessage() {
+  public LoadDatasetRequest() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public LoadDatasetRequestMessage(LoadDatasetRequestMessage other) : this() {
+  public LoadDatasetRequest(LoadDatasetRequest other) : this() {
     datasetPath_ = other.datasetPath_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public LoadDatasetRequestMessage Clone() {
-    return new LoadDatasetRequestMessage(this);
+  public LoadDatasetRequest Clone() {
+    return new LoadDatasetRequest(this);
   }
 
   /// <summary>Field number for the "datasetPath" field.</summary>
@@ -328,11 +328,11 @@ public sealed partial class LoadDatasetRequestMessage : pb::IMessage<LoadDataset
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as LoadDatasetRequestMessage);
+    return Equals(other as LoadDatasetRequest);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(LoadDatasetRequestMessage other) {
+  public bool Equals(LoadDatasetRequest other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
@@ -382,7 +382,7 @@ public sealed partial class LoadDatasetRequestMessage : pb::IMessage<LoadDataset
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(LoadDatasetRequestMessage other) {
+  public void MergeFrom(LoadDatasetRequest other) {
     if (other == null) {
       return;
     }
@@ -1084,11 +1084,11 @@ public sealed partial class DatasetMetadata : pb::IMessage<DatasetMetadata> {
 
 }
 
-public sealed partial class GetDatasetToPlotRequestMessage : pb::IMessage<GetDatasetToPlotRequestMessage> {
-  private static readonly pb::MessageParser<GetDatasetToPlotRequestMessage> _parser = new pb::MessageParser<GetDatasetToPlotRequestMessage>(() => new GetDatasetToPlotRequestMessage());
+public sealed partial class GetNormalisedDatasetRequest : pb::IMessage<GetNormalisedDatasetRequest> {
+  private static readonly pb::MessageParser<GetNormalisedDatasetRequest> _parser = new pb::MessageParser<GetNormalisedDatasetRequest>(() => new GetNormalisedDatasetRequest());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<GetDatasetToPlotRequestMessage> Parser { get { return _parser; } }
+  public static pb::MessageParser<GetNormalisedDatasetRequest> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -1101,21 +1101,21 @@ public sealed partial class GetDatasetToPlotRequestMessage : pb::IMessage<GetDat
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public GetDatasetToPlotRequestMessage() {
+  public GetNormalisedDatasetRequest() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public GetDatasetToPlotRequestMessage(GetDatasetToPlotRequestMessage other) : this() {
+  public GetNormalisedDatasetRequest(GetNormalisedDatasetRequest other) : this() {
     columnsNames_ = other.columnsNames_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public GetDatasetToPlotRequestMessage Clone() {
-    return new GetDatasetToPlotRequestMessage(this);
+  public GetNormalisedDatasetRequest Clone() {
+    return new GetNormalisedDatasetRequest(this);
   }
 
   /// <summary>Field number for the "columnsNames" field.</summary>
@@ -1130,11 +1130,11 @@ public sealed partial class GetDatasetToPlotRequestMessage : pb::IMessage<GetDat
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as GetDatasetToPlotRequestMessage);
+    return Equals(other as GetNormalisedDatasetRequest);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(GetDatasetToPlotRequestMessage other) {
+  public bool Equals(GetNormalisedDatasetRequest other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
@@ -1179,7 +1179,7 @@ public sealed partial class GetDatasetToPlotRequestMessage : pb::IMessage<GetDat
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(GetDatasetToPlotRequestMessage other) {
+  public void MergeFrom(GetNormalisedDatasetRequest other) {
     if (other == null) {
       return;
     }
@@ -1205,11 +1205,11 @@ public sealed partial class GetDatasetToPlotRequestMessage : pb::IMessage<GetDat
 
 }
 
-public sealed partial class DatasetToPlot : pb::IMessage<DatasetToPlot> {
-  private static readonly pb::MessageParser<DatasetToPlot> _parser = new pb::MessageParser<DatasetToPlot>(() => new DatasetToPlot());
+public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> {
+  private static readonly pb::MessageParser<NormalisedDataset> _parser = new pb::MessageParser<NormalisedDataset>(() => new NormalisedDataset());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<DatasetToPlot> Parser { get { return _parser; } }
+  public static pb::MessageParser<NormalisedDataset> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -1222,40 +1222,40 @@ public sealed partial class DatasetToPlot : pb::IMessage<DatasetToPlot> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public DatasetToPlot() {
+  public NormalisedDataset() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public DatasetToPlot(DatasetToPlot other) : this() {
+  public NormalisedDataset(NormalisedDataset other) : this() {
     rows_ = other.rows_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public DatasetToPlot Clone() {
-    return new DatasetToPlot(this);
+  public NormalisedDataset Clone() {
+    return new NormalisedDataset(this);
   }
 
   /// <summary>Field number for the "rows" field.</summary>
   public const int RowsFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::DatasetRow> _repeated_rows_codec
-      = pb::FieldCodec.ForMessage(10, global::DatasetRow.Parser);
-  private readonly pbc::RepeatedField<global::DatasetRow> rows_ = new pbc::RepeatedField<global::DatasetRow>();
+  private static readonly pb::FieldCodec<global::NormalisedRow> _repeated_rows_codec
+      = pb::FieldCodec.ForMessage(10, global::NormalisedRow.Parser);
+  private readonly pbc::RepeatedField<global::NormalisedRow> rows_ = new pbc::RepeatedField<global::NormalisedRow>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::DatasetRow> Rows {
+  public pbc::RepeatedField<global::NormalisedRow> Rows {
     get { return rows_; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as DatasetToPlot);
+    return Equals(other as NormalisedDataset);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(DatasetToPlot other) {
+  public bool Equals(NormalisedDataset other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
@@ -1300,7 +1300,7 @@ public sealed partial class DatasetToPlot : pb::IMessage<DatasetToPlot> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(DatasetToPlot other) {
+  public void MergeFrom(NormalisedDataset other) {
     if (other == null) {
       return;
     }
@@ -1326,11 +1326,11 @@ public sealed partial class DatasetToPlot : pb::IMessage<DatasetToPlot> {
 
 }
 
-public sealed partial class DatasetRow : pb::IMessage<DatasetRow> {
-  private static readonly pb::MessageParser<DatasetRow> _parser = new pb::MessageParser<DatasetRow>(() => new DatasetRow());
+public sealed partial class NormalisedRow : pb::IMessage<NormalisedRow> {
+  private static readonly pb::MessageParser<NormalisedRow> _parser = new pb::MessageParser<NormalisedRow>(() => new NormalisedRow());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<DatasetRow> Parser { get { return _parser; } }
+  public static pb::MessageParser<NormalisedRow> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -1343,54 +1343,54 @@ public sealed partial class DatasetRow : pb::IMessage<DatasetRow> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public DatasetRow() {
+  public NormalisedRow() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public DatasetRow(DatasetRow other) : this() {
-    rowValues_ = other.rowValues_.Clone();
+  public NormalisedRow(NormalisedRow other) : this() {
+    values_ = other.values_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public DatasetRow Clone() {
-    return new DatasetRow(this);
+  public NormalisedRow Clone() {
+    return new NormalisedRow(this);
   }
 
-  /// <summary>Field number for the "rowValues" field.</summary>
-  public const int RowValuesFieldNumber = 1;
-  private static readonly pb::FieldCodec<float> _repeated_rowValues_codec
+  /// <summary>Field number for the "values" field.</summary>
+  public const int ValuesFieldNumber = 1;
+  private static readonly pb::FieldCodec<float> _repeated_values_codec
       = pb::FieldCodec.ForFloat(10);
-  private readonly pbc::RepeatedField<float> rowValues_ = new pbc::RepeatedField<float>();
+  private readonly pbc::RepeatedField<float> values_ = new pbc::RepeatedField<float>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<float> RowValues {
-    get { return rowValues_; }
+  public pbc::RepeatedField<float> Values {
+    get { return values_; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as DatasetRow);
+    return Equals(other as NormalisedRow);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(DatasetRow other) {
+  public bool Equals(NormalisedRow other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if(!rowValues_.Equals(other.rowValues_)) return false;
+    if(!values_.Equals(other.values_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    hash ^= rowValues_.GetHashCode();
+    hash ^= values_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1404,7 +1404,7 @@ public sealed partial class DatasetRow : pb::IMessage<DatasetRow> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    rowValues_.WriteTo(output, _repeated_rowValues_codec);
+    values_.WriteTo(output, _repeated_values_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -1413,7 +1413,7 @@ public sealed partial class DatasetRow : pb::IMessage<DatasetRow> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    size += rowValues_.CalculateSize(_repeated_rowValues_codec);
+    size += values_.CalculateSize(_repeated_values_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -1421,11 +1421,11 @@ public sealed partial class DatasetRow : pb::IMessage<DatasetRow> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(DatasetRow other) {
+  public void MergeFrom(NormalisedRow other) {
     if (other == null) {
       return;
     }
-    rowValues_.Add(other.rowValues_);
+    values_.Add(other.values_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -1439,7 +1439,7 @@ public sealed partial class DatasetRow : pb::IMessage<DatasetRow> {
           break;
         case 10:
         case 13: {
-          rowValues_.AddEntriesFrom(input, _repeated_rowValues_codec);
+          values_.AddEntriesFrom(input, _repeated_values_codec);
           break;
         }
       }

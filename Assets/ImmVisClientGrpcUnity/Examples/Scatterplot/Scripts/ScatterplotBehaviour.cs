@@ -46,7 +46,7 @@ public class ScatterplotBehaviour : MonoBehaviour
         argsBuffer = new ComputeBuffer(1, args.Length * sizeof(uint), ComputeBufferType.IndirectArguments);
     }
 
-    internal void PlotData(DatasetToPlot data)
+    internal void PlotData(NormalisedDataset data)
     {
         var values = data.Rows;
         var pointsCount = values.Count;
@@ -59,7 +59,7 @@ public class ScatterplotBehaviour : MonoBehaviour
 
         for (int i = 0; i < pointsCount; i++)
         {
-            var point = values[i].RowValues;
+            var point = values[i].Values;
 
             Vector3 position = new Vector3();
             Vector4 color = new Vector4();

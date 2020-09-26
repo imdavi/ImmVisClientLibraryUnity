@@ -13,10 +13,10 @@ public static partial class ImmVisPandas
 
   static readonly grpc::Marshaller<global::Empty> __Marshaller_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Empty.Parser.ParseFrom);
   static readonly grpc::Marshaller<global::AvailableDatasetsList> __Marshaller_AvailableDatasetsList = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AvailableDatasetsList.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::LoadDatasetRequestMessage> __Marshaller_LoadDatasetRequestMessage = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::LoadDatasetRequestMessage.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::LoadDatasetRequest> __Marshaller_LoadDatasetRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::LoadDatasetRequest.Parser.ParseFrom);
   static readonly grpc::Marshaller<global::DatasetMetadata> __Marshaller_DatasetMetadata = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::DatasetMetadata.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::GetDatasetToPlotRequestMessage> __Marshaller_GetDatasetToPlotRequestMessage = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GetDatasetToPlotRequestMessage.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::DatasetToPlot> __Marshaller_DatasetToPlot = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::DatasetToPlot.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::GetNormalisedDatasetRequest> __Marshaller_GetNormalisedDatasetRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GetNormalisedDatasetRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::NormalisedDataset> __Marshaller_NormalisedDataset = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::NormalisedDataset.Parser.ParseFrom);
 
   static readonly grpc::Method<global::Empty, global::AvailableDatasetsList> __Method_ListAvailableDatasets = new grpc::Method<global::Empty, global::AvailableDatasetsList>(
       grpc::MethodType.Unary,
@@ -25,19 +25,19 @@ public static partial class ImmVisPandas
       __Marshaller_Empty,
       __Marshaller_AvailableDatasetsList);
 
-  static readonly grpc::Method<global::LoadDatasetRequestMessage, global::DatasetMetadata> __Method_LoadDataset = new grpc::Method<global::LoadDatasetRequestMessage, global::DatasetMetadata>(
+  static readonly grpc::Method<global::LoadDatasetRequest, global::DatasetMetadata> __Method_LoadDataset = new grpc::Method<global::LoadDatasetRequest, global::DatasetMetadata>(
       grpc::MethodType.Unary,
       __ServiceName,
       "LoadDataset",
-      __Marshaller_LoadDatasetRequestMessage,
+      __Marshaller_LoadDatasetRequest,
       __Marshaller_DatasetMetadata);
 
-  static readonly grpc::Method<global::GetDatasetToPlotRequestMessage, global::DatasetToPlot> __Method_GetDatasetToPlot = new grpc::Method<global::GetDatasetToPlotRequestMessage, global::DatasetToPlot>(
+  static readonly grpc::Method<global::GetNormalisedDatasetRequest, global::NormalisedDataset> __Method_GetNormalisedDataset = new grpc::Method<global::GetNormalisedDatasetRequest, global::NormalisedDataset>(
       grpc::MethodType.Unary,
       __ServiceName,
-      "GetDatasetToPlot",
-      __Marshaller_GetDatasetToPlotRequestMessage,
-      __Marshaller_DatasetToPlot);
+      "GetNormalisedDataset",
+      __Marshaller_GetNormalisedDatasetRequest,
+      __Marshaller_NormalisedDataset);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -54,12 +54,12 @@ public static partial class ImmVisPandas
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
 
-    public virtual global::System.Threading.Tasks.Task<global::DatasetMetadata> LoadDataset(global::LoadDatasetRequestMessage request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::DatasetMetadata> LoadDataset(global::LoadDatasetRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
 
-    public virtual global::System.Threading.Tasks.Task<global::DatasetToPlot> GetDatasetToPlot(global::GetDatasetToPlotRequestMessage request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::NormalisedDataset> GetNormalisedDataset(global::GetNormalisedDatasetRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -105,37 +105,37 @@ public static partial class ImmVisPandas
     {
       return CallInvoker.AsyncUnaryCall(__Method_ListAvailableDatasets, null, options, request);
     }
-    public virtual global::DatasetMetadata LoadDataset(global::LoadDatasetRequestMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::DatasetMetadata LoadDataset(global::LoadDatasetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return LoadDataset(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual global::DatasetMetadata LoadDataset(global::LoadDatasetRequestMessage request, grpc::CallOptions options)
+    public virtual global::DatasetMetadata LoadDataset(global::LoadDatasetRequest request, grpc::CallOptions options)
     {
       return CallInvoker.BlockingUnaryCall(__Method_LoadDataset, null, options, request);
     }
-    public virtual grpc::AsyncUnaryCall<global::DatasetMetadata> LoadDatasetAsync(global::LoadDatasetRequestMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::DatasetMetadata> LoadDatasetAsync(global::LoadDatasetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return LoadDatasetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual grpc::AsyncUnaryCall<global::DatasetMetadata> LoadDatasetAsync(global::LoadDatasetRequestMessage request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::DatasetMetadata> LoadDatasetAsync(global::LoadDatasetRequest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_LoadDataset, null, options, request);
     }
-    public virtual global::DatasetToPlot GetDatasetToPlot(global::GetDatasetToPlotRequestMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::NormalisedDataset GetNormalisedDataset(global::GetNormalisedDatasetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
-      return GetDatasetToPlot(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      return GetNormalisedDataset(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual global::DatasetToPlot GetDatasetToPlot(global::GetDatasetToPlotRequestMessage request, grpc::CallOptions options)
+    public virtual global::NormalisedDataset GetNormalisedDataset(global::GetNormalisedDatasetRequest request, grpc::CallOptions options)
     {
-      return CallInvoker.BlockingUnaryCall(__Method_GetDatasetToPlot, null, options, request);
+      return CallInvoker.BlockingUnaryCall(__Method_GetNormalisedDataset, null, options, request);
     }
-    public virtual grpc::AsyncUnaryCall<global::DatasetToPlot> GetDatasetToPlotAsync(global::GetDatasetToPlotRequestMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::NormalisedDataset> GetNormalisedDatasetAsync(global::GetNormalisedDatasetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
-      return GetDatasetToPlotAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      return GetNormalisedDatasetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual grpc::AsyncUnaryCall<global::DatasetToPlot> GetDatasetToPlotAsync(global::GetDatasetToPlotRequestMessage request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::NormalisedDataset> GetNormalisedDatasetAsync(global::GetNormalisedDatasetRequest request, grpc::CallOptions options)
     {
-      return CallInvoker.AsyncUnaryCall(__Method_GetDatasetToPlot, null, options, request);
+      return CallInvoker.AsyncUnaryCall(__Method_GetNormalisedDataset, null, options, request);
     }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     protected override ImmVisPandasClient NewInstance(ClientBaseConfiguration configuration)
@@ -151,7 +151,7 @@ public static partial class ImmVisPandas
     return grpc::ServerServiceDefinition.CreateBuilder()
         .AddMethod(__Method_ListAvailableDatasets, serviceImpl.ListAvailableDatasets)
         .AddMethod(__Method_LoadDataset, serviceImpl.LoadDataset)
-        .AddMethod(__Method_GetDatasetToPlot, serviceImpl.GetDatasetToPlot).Build();
+        .AddMethod(__Method_GetNormalisedDataset, serviceImpl.GetNormalisedDataset).Build();
   }
 
   /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -161,8 +161,8 @@ public static partial class ImmVisPandas
   public static void BindService(grpc::ServiceBinderBase serviceBinder, ImmVisPandasBase serviceImpl)
   {
     serviceBinder.AddMethod(__Method_ListAvailableDatasets, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Empty, global::AvailableDatasetsList>(serviceImpl.ListAvailableDatasets));
-    serviceBinder.AddMethod(__Method_LoadDataset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LoadDatasetRequestMessage, global::DatasetMetadata>(serviceImpl.LoadDataset));
-    serviceBinder.AddMethod(__Method_GetDatasetToPlot, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GetDatasetToPlotRequestMessage, global::DatasetToPlot>(serviceImpl.GetDatasetToPlot));
+    serviceBinder.AddMethod(__Method_LoadDataset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LoadDatasetRequest, global::DatasetMetadata>(serviceImpl.LoadDataset));
+    serviceBinder.AddMethod(__Method_GetNormalisedDataset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GetNormalisedDatasetRequest, global::NormalisedDataset>(serviceImpl.GetNormalisedDataset));
   }
 
 }

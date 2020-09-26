@@ -32,14 +32,14 @@ public class DataManager : MonoBehaviour
         {
             var datasetPath = datasetsPaths[0];
 
-            var datasetMetadata = await grpcClient.LoadDatasetAsync(new LoadDatasetRequestMessage()
+            var datasetMetadata = await grpcClient.LoadDatasetAsync(new LoadDatasetRequest()
             {
                 DatasetPath = datasetPath
             });
 
             var pointsCount = datasetMetadata.RowsCount;
 
-            var datasetToPlot = await grpcClient.GetDatasetToPlotAsync(new GetDatasetToPlotRequestMessage());
+            var datasetToPlot = await grpcClient.GetNormalisedDatasetAsync(new GetNormalisedDatasetRequest());
 
             scatterplotBehaviour?.PlotData(datasetToPlot);
         }
