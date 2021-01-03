@@ -26,7 +26,6 @@ Shader "ImmVis/ScatterplotShader"
             StructuredBuffer<float> sizesBuffer;
             float4x4 _TransformMatrix;
             float _PointMinimumSize;
-            float _FilterY;
         #endif
 
         void setup()

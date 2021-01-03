@@ -11,9 +11,6 @@ public class ScatterplotBehaviour : MonoBehaviour
     public float PointMinimumSize = 0.5f;
     public float ColorMultiplier = 0.5f;
 
-    [Range(0.0f, 1.0f)]
-    public float FilterY = 1.0f;
-
     private uint[] args = new uint[5] { 0, 0, 0, 0, 0 };
 
     private ComputeBuffer positionsBuffer;
@@ -115,14 +112,13 @@ public class ScatterplotBehaviour : MonoBehaviour
 
         block.SetMatrix(MATRIX_PROPERTY_NAME, transform.localToWorldMatrix * Matrix4x4.Translate(OriginPoint));
         block.SetFloat(POINT_MINIMUM_SIZE_PROPERTY_NAME, PointMinimumSize);
-        block.SetFloat(FILTER_Y, FilterY);
     }
 
     void Update()
     {
         UpdateMaterialProperties();
 
-        if (DataPointMesh != null && DataPointMaterial != null)
+        if (DataPointMesh != null && DataPointMaterial != null && argsBuffer != null)
         {
             Graphics.DrawMeshInstancedIndirect(
                 DataPointMesh,
@@ -134,6 +130,11 @@ public class ScatterplotBehaviour : MonoBehaviour
                 block
             );
         }
+    }
+
+    internal void ResetScatterplot()
+    {
+        OnDisable();
     }
 
     void OnDisable()
@@ -163,6 +164,7 @@ public class ScatterplotBehaviour : MonoBehaviour
 
         if (positionsBuffer != null) positionsBuffer.Release();
         if (colorsBuffer != null) colorsBuffer.Release();
+        if (sizesBuffer != null) sizesBuffer.Release();
 
         positionsBuffer = new ComputeBuffer(pointsCount, VECTOR3_BUFFER_STRIDE);
         colorsBuffer = new ComputeBuffer(pointsCount, VECTOR4_BUFFER_STRIDE);
