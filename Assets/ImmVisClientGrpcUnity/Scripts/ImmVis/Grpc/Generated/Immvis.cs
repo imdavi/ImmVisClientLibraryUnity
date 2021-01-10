@@ -24,28 +24,33 @@ public static partial class ImmvisReflection {
         string.Concat(
           "CgxpbW12aXMucHJvdG8iBwoFRW1wdHkiLgoVQXZhaWxhYmxlRGF0YXNldHNM",
           "aXN0EhUKDWRhdGFzZXRzUGF0aHMYASADKAkiKQoSTG9hZERhdGFzZXRSZXF1",
-          "ZXN0EhMKC2RhdGFzZXRQYXRoGAEgASgJIioKBkNvbHVtbhISCgpjb2x1bW5O",
-          "YW1lGAEgASgJEgwKBHR5cGUYAiABKAkiUAocRGVzY3JpcHRpdmVTdGF0aXN0",
-          "aWNzRmVhdHVyZRIMCgRuYW1lGAEgASgJEg0KBXZhbHVlGAIgASgJEhMKC2Zl",
-          "YXR1cmVUeXBlGAMgASgJImsKCkNvbHVtbkluZm8SFwoGY29sdW1uGAEgASgL",
-          "MgcuQ29sdW1uEkQKHWRlc2NyaXB0aXZlU3RhdGlzdGljc0ZlYXR1cmVzGAIg",
-          "AygLMh0uRGVzY3JpcHRpdmVTdGF0aXN0aWNzRmVhdHVyZSJcCg9EYXRhc2V0",
-          "TWV0YWRhdGESEQoJcm93c0NvdW50GAEgASgFEhQKDGNvbHVtbnNDb3VudBgC",
-          "IAEoBRIgCgtjb2x1bW5zSW5mbxgDIAMoCzILLkNvbHVtbkluZm8iMwobR2V0",
-          "Tm9ybWFsaXNlZERhdGFzZXRSZXF1ZXN0EhQKDGNvbHVtbnNOYW1lcxgBIAMo",
-          "CSIxChFOb3JtYWxpc2VkRGF0YXNldBIcCgRyb3dzGAEgAygLMg4uTm9ybWFs",
-          "aXNlZFJvdyIfCg1Ob3JtYWxpc2VkUm93Eg4KBnZhbHVlcxgBIAMoAjLNAQoM",
-          "SW1tVmlzUGFuZGFzEjkKFUxpc3RBdmFpbGFibGVEYXRhc2V0cxIGLkVtcHR5",
-          "GhYuQXZhaWxhYmxlRGF0YXNldHNMaXN0IgASNgoLTG9hZERhdGFzZXQSEy5M",
-          "b2FkRGF0YXNldFJlcXVlc3QaEC5EYXRhc2V0TWV0YWRhdGEiABJKChRHZXRO",
-          "b3JtYWxpc2VkRGF0YXNldBIcLkdldE5vcm1hbGlzZWREYXRhc2V0UmVxdWVz",
-          "dBoSLk5vcm1hbGlzZWREYXRhc2V0IgBiBnByb3RvMw=="));
+          "ZXN0EhMKC2RhdGFzZXRQYXRoGAEgASgJIloKFkdlbmVyYXRlRGF0YXNldFJl",
+          "cXVlc3QSFQoNY29sdW1uc0Ftb3VudBgBIAEoBRISCgpyb3dzQW1vdW50GAIg",
+          "ASgFEhUKDWNlbnRlcnNBbW91bnQYAyABKAUiKgoGQ29sdW1uEhIKCmNvbHVt",
+          "bk5hbWUYASABKAkSDAoEdHlwZRgCIAEoCSJQChxEZXNjcmlwdGl2ZVN0YXRp",
+          "c3RpY3NGZWF0dXJlEgwKBG5hbWUYASABKAkSDQoFdmFsdWUYAiABKAkSEwoL",
+          "ZmVhdHVyZVR5cGUYAyABKAkiawoKQ29sdW1uSW5mbxIXCgZjb2x1bW4YASAB",
+          "KAsyBy5Db2x1bW4SRAodZGVzY3JpcHRpdmVTdGF0aXN0aWNzRmVhdHVyZXMY",
+          "AiADKAsyHS5EZXNjcmlwdGl2ZVN0YXRpc3RpY3NGZWF0dXJlIlwKD0RhdGFz",
+          "ZXRNZXRhZGF0YRIRCglyb3dzQ291bnQYASABKAUSFAoMY29sdW1uc0NvdW50",
+          "GAIgASgFEiAKC2NvbHVtbnNJbmZvGAMgAygLMgsuQ29sdW1uSW5mbyIzChtH",
+          "ZXROb3JtYWxpc2VkRGF0YXNldFJlcXVlc3QSFAoMY29sdW1uc05hbWVzGAEg",
+          "AygJIjEKEU5vcm1hbGlzZWREYXRhc2V0EhwKBHJvd3MYASADKAsyDi5Ob3Jt",
+          "YWxpc2VkUm93Ih8KDU5vcm1hbGlzZWRSb3cSDgoGdmFsdWVzGAEgAygCMo0C",
+          "CgxJbW1WaXNQYW5kYXMSOQoVTGlzdEF2YWlsYWJsZURhdGFzZXRzEgYuRW1w",
+          "dHkaFi5BdmFpbGFibGVEYXRhc2V0c0xpc3QiABI2CgtMb2FkRGF0YXNldBIT",
+          "LkxvYWREYXRhc2V0UmVxdWVzdBoQLkRhdGFzZXRNZXRhZGF0YSIAEkoKFEdl",
+          "dE5vcm1hbGlzZWREYXRhc2V0EhwuR2V0Tm9ybWFsaXNlZERhdGFzZXRSZXF1",
+          "ZXN0GhIuTm9ybWFsaXNlZERhdGFzZXQiABI+Cg9HZW5lcmF0ZURhdGFzZXQS",
+          "Fy5HZW5lcmF0ZURhdGFzZXRSZXF1ZXN0GhAuRGF0YXNldE1ldGFkYXRhIgBi",
+          "BnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::Empty), global::Empty.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::AvailableDatasetsList), global::AvailableDatasetsList.Parser, new[]{ "DatasetsPaths" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LoadDatasetRequest), global::LoadDatasetRequest.Parser, new[]{ "DatasetPath" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GenerateDatasetRequest), global::GenerateDatasetRequest.Parser, new[]{ "ColumnsAmount", "RowsAmount", "CentersAmount" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Column), global::Column.Parser, new[]{ "ColumnName", "Type" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DescriptiveStatisticsFeature), global::DescriptiveStatisticsFeature.Parser, new[]{ "Name", "Value", "FeatureType" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ColumnInfo), global::ColumnInfo.Parser, new[]{ "Column", "DescriptiveStatisticsFeatures" }, null, null, null),
@@ -410,6 +415,191 @@ public sealed partial class LoadDatasetRequest : pb::IMessage<LoadDatasetRequest
 
 }
 
+public sealed partial class GenerateDatasetRequest : pb::IMessage<GenerateDatasetRequest> {
+  private static readonly pb::MessageParser<GenerateDatasetRequest> _parser = new pb::MessageParser<GenerateDatasetRequest>(() => new GenerateDatasetRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<GenerateDatasetRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GenerateDatasetRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GenerateDatasetRequest(GenerateDatasetRequest other) : this() {
+    columnsAmount_ = other.columnsAmount_;
+    rowsAmount_ = other.rowsAmount_;
+    centersAmount_ = other.centersAmount_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GenerateDatasetRequest Clone() {
+    return new GenerateDatasetRequest(this);
+  }
+
+  /// <summary>Field number for the "columnsAmount" field.</summary>
+  public const int ColumnsAmountFieldNumber = 1;
+  private int columnsAmount_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int ColumnsAmount {
+    get { return columnsAmount_; }
+    set {
+      columnsAmount_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "rowsAmount" field.</summary>
+  public const int RowsAmountFieldNumber = 2;
+  private int rowsAmount_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int RowsAmount {
+    get { return rowsAmount_; }
+    set {
+      rowsAmount_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "centersAmount" field.</summary>
+  public const int CentersAmountFieldNumber = 3;
+  private int centersAmount_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CentersAmount {
+    get { return centersAmount_; }
+    set {
+      centersAmount_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as GenerateDatasetRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(GenerateDatasetRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (ColumnsAmount != other.ColumnsAmount) return false;
+    if (RowsAmount != other.RowsAmount) return false;
+    if (CentersAmount != other.CentersAmount) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (ColumnsAmount != 0) hash ^= ColumnsAmount.GetHashCode();
+    if (RowsAmount != 0) hash ^= RowsAmount.GetHashCode();
+    if (CentersAmount != 0) hash ^= CentersAmount.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (ColumnsAmount != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(ColumnsAmount);
+    }
+    if (RowsAmount != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(RowsAmount);
+    }
+    if (CentersAmount != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(CentersAmount);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (ColumnsAmount != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ColumnsAmount);
+    }
+    if (RowsAmount != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(RowsAmount);
+    }
+    if (CentersAmount != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(CentersAmount);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(GenerateDatasetRequest other) {
+    if (other == null) {
+      return;
+    }
+    if (other.ColumnsAmount != 0) {
+      ColumnsAmount = other.ColumnsAmount;
+    }
+    if (other.RowsAmount != 0) {
+      RowsAmount = other.RowsAmount;
+    }
+    if (other.CentersAmount != 0) {
+      CentersAmount = other.CentersAmount;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          ColumnsAmount = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          RowsAmount = input.ReadInt32();
+          break;
+        }
+        case 24: {
+          CentersAmount = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class Column : pb::IMessage<Column> {
   private static readonly pb::MessageParser<Column> _parser = new pb::MessageParser<Column>(() => new Column());
   private pb::UnknownFieldSet _unknownFields;
@@ -418,7 +608,7 @@ public sealed partial class Column : pb::IMessage<Column> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[3]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -575,7 +765,7 @@ public sealed partial class DescriptiveStatisticsFeature : pb::IMessage<Descript
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[4]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -760,7 +950,7 @@ public sealed partial class ColumnInfo : pb::IMessage<ColumnInfo> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[5]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -915,7 +1105,7 @@ public sealed partial class DatasetMetadata : pb::IMessage<DatasetMetadata> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[6]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[7]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1092,7 +1282,7 @@ public sealed partial class GetNormalisedDatasetRequest : pb::IMessage<GetNormal
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[7]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[8]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1213,7 +1403,7 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[8]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[9]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1334,7 +1524,7 @@ public sealed partial class NormalisedRow : pb::IMessage<NormalisedRow> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ImmvisReflection.Descriptor.MessageTypes[9]; }
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[10]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
