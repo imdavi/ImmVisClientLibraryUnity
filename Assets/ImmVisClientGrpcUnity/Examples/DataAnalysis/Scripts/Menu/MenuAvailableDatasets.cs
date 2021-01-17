@@ -44,9 +44,8 @@ public class MenuAvailableDatasets : BaseScreen
         GameObject button = Instantiate(buttonPrefab) as GameObject;
         button.name = $"DatasetButton({datasetPath})";
         button.SetActive(true);
-
-        button.transform.SetParent(listContentGameObject.transform);
-        button.transform.localScale = Vector3.one;
+        
+        button.transform.SetParent(listContentGameObject.transform, false);
 
         var datasetButtonBehaviour = button.GetComponent<DatasetButtonBehaviour>();
 
