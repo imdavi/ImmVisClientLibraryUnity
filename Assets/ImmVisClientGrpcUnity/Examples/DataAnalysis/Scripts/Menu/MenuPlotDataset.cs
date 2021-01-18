@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,19 +11,19 @@ public class MenuPlotDataset : BaseScreen
     private MainMenuManager mainMenuManager;
 
     [SerializeField]
-    private Dropdown xDropdown;
+    private TMP_Dropdown xDropdown;
 
     [SerializeField]
-    private Dropdown yDropdown;
+    private TMP_Dropdown yDropdown;
 
     [SerializeField]
-    private Dropdown zDropdown;
+    private TMP_Dropdown zDropdown;
 
     [SerializeField]
-    private Dropdown sizeDropdown;
+    private TMP_Dropdown sizeDropdown;
 
     [SerializeField]
-    private Dropdown colorDropdown;
+    private TMP_Dropdown colorDropdown;
 
     protected override void OnShow(object data = null)
     {

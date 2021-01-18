@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DatasetButtonBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private Text textComponent;
+    private TextMeshProUGUI textComponent;
+    
     private string dataset = "";
 
     public delegate void OnDatasetButtonClickDelegate(string dataset);
@@ -19,9 +21,9 @@ public class DatasetButtonBehaviour : MonoBehaviour
         textComponent.text = dataset;
     }
 
-    public void OnClick() 
+    public void OnClick()
     {
-        if(OnDatasetButtonClick != null) 
+        if (OnDatasetButtonClick != null)
         {
             OnDatasetButtonClick.Invoke(dataset);
         }

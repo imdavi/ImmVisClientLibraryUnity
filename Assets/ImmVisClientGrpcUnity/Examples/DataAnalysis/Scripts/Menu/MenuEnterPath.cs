@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,10 @@ public class MenuEnterPath : BaseScreen
     private MainMenuManager mainMenuManager;
 
     [SerializeField]
-    private InputField pathInputFieldComponent;
+    private TMP_InputField pathInputFieldComponent;
 
     [SerializeField]
     private Button submitButton;
-
 
     public void ClickedOnOkButton()
     {

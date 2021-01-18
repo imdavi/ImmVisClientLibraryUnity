@@ -42,7 +42,7 @@ public class MainMenuManager : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -67,7 +67,7 @@ public class MainMenuManager : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -90,7 +90,7 @@ public class MainMenuManager : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -118,7 +118,7 @@ public class MainMenuManager : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
