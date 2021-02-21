@@ -76,7 +76,12 @@ public class ScreenManager : MonoBehaviour
         HideScreen(screensDictionary[screenName]);
     }
 
-    public void ShowScreen(string screenName, object data = null)
+    public void ShowScreen(string screenName)
+    {
+        ShowScreen(screenName, null);
+    }
+
+    public void ShowScreen(string screenName, object data)
     {
         if (!screensDictionary.ContainsKey(screenName))
         {

@@ -18,15 +18,34 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
+        if (immVisGrpcClientManager.IsReady)
+        {
+            screenManager.ShowScreen("DatasetSelection");
+        }
+        else
+        {
+            screenManager.ShowScreen("Connect");
+        }
+    }
+
+    public void ClickedOnConnect()
+    {
         screenManager.ShowScreen("Loading", data: "Connecting to ImmVis server...");
 
-        if (immVisGrpcClientManager != null)
+        if (immVisGrpcClientManager.IsReady)
+        {
+            screenManager.ShowScreen("DatasetSelection");
+        }
+        else
         {
             immVisGrpcClientManager.ClientInitialized += () =>
             {
-                screenManager.ShowScreen("Home");
+                screenManager.ShowScreen("DatasetSelection");
             };
+
+            immVisGrpcClientManager.ConnectToImmVisUsingDiscovery();
         }
+
     }
 
     public async void ClickedOnListAvailableDatasets()
@@ -38,6 +57,29 @@ public class MainMenuManager : MonoBehaviour
             var grpcClient = immVisGrpcClientManager.GrpcClient;
             var availableDatasets = await grpcClient.ListAvailableDatasetsAsync(new Empty());
             screenManager.ShowScreen("AvailableDatasets", data: availableDatasets);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError(ex);
+            screenManager.ShowScreen("Error", ex);
+        }
+    }
+
+    public async void RequestedToPlotKMeans(List<string> selectedColumns)
+    {
+        screenManager.ShowScreen("Loading", data: "Plotting dataset...");
+
+        try
+        {
+            var grpcClient = immVisGrpcClientManager.GrpcClient;
+            var datasetToPlot = await grpcClient.GetNormalisedDatasetAsync(new GetNormalisedDatasetRequest()
+            {
+                ColumnsNames = { selectedColumns }
+            });
+
+            scatterplotBehaviour?.PlotData(datasetToPlot);
+
+            screenManager.ShowScreen("DatasetPlotted");
         }
         catch (System.Exception ex)
         {
@@ -62,7 +104,7 @@ public class MainMenuManager : MonoBehaviour
             {
                 DatasetPath = datasetPath
             });
-            screenManager.ShowScreen("PlotDataset", data: datasetMetadata);
+            screenManager.ShowScreen("DatasetActions", data: datasetMetadata);
         }
         catch (System.Exception ex)
         {
@@ -113,7 +155,7 @@ public class MainMenuManager : MonoBehaviour
                 CentersAmount = centersAmount
 
             });
-            screenManager.ShowScreen("PlotDataset", data: datasetMetadata);
+            screenManager.ShowScreen("DatasetActions", data: datasetMetadata);
         }
         catch (System.Exception ex)
         {
