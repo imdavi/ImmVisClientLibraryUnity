@@ -19,6 +19,9 @@ public class MenuKMeans : BaseScreen
     [SerializeField]
     private TMP_Dropdown zDropdown;
 
+    [SerializeField]
+    private Slider centersSlider;
+
     protected override void OnShow(object data = null)
     {
         if (data != null && data is DatasetMetadata)
@@ -45,6 +48,8 @@ public class MenuKMeans : BaseScreen
             zDropdown.options[zDropdown.value].text
         };
 
-        mainMenuManager?.RequestedToPlotKMeans(selectedOptions);
+        var centersToDetect = (int)centersSlider.value;
+
+        mainMenuManager?.RequestedToPlotKMeans(selectedOptions, centersToDetect);
     }
 }

@@ -65,19 +65,20 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    public async void RequestedToPlotKMeans(List<string> selectedColumns)
+    public async void RequestedToPlotKMeans(List<string> selectedColumns, int centersToDetect)
     {
         screenManager.ShowScreen("Loading", data: "Plotting dataset...");
 
         try
         {
             var grpcClient = immVisGrpcClientManager.GrpcClient;
-            var datasetToPlot = await grpcClient.GetNormalisedDatasetAsync(new GetNormalisedDatasetRequest()
+            var datasetToPlot = await grpcClient.DoKMeansAnalysisAsync(new KMeansAnalysisRequest()
             {
-                ColumnsNames = { selectedColumns }
+                ColumnsNames = { selectedColumns },
+                ClustersNumber = centersToDetect
             });
 
-            scatterplotBehaviour?.PlotData(datasetToPlot);
+            scatterplotBehaviour?.PlotKMeans(datasetToPlot);
 
             screenManager.ShowScreen("DatasetPlotted");
         }
@@ -125,7 +126,7 @@ public class MainMenuManager : MonoBehaviour
                 ColumnsNames = { selectedColumns }
             });
 
-            scatterplotBehaviour?.PlotData(datasetToPlot);
+            scatterplotBehaviour?.PlotToPoints(datasetToPlot);
 
             screenManager.ShowScreen("DatasetPlotted");
         }
@@ -174,7 +175,7 @@ public class MainMenuManager : MonoBehaviour
         screenManager.ClearNavigationStack();
         screenManager.ShowScreen("Home");
 
-        scatterplotBehaviour.ResetScatterplot();
+        scatterplotBehaviour.Reset();
     }
 
     public void SubmitDatasetPath(string datasetPath)

@@ -17,7 +17,7 @@ public class LabelsBehaviour : MonoBehaviour
 
     public void UpdateLabels(RepeatedField<string> columnsNames, RepeatedField<ColumnsLabels> columnsLabels)
     {
-        for (int i = 0; i < columnsNames.Count; i++)
+        for (int i = 0; i < Mathf.Clamp(columnsNames.Count, 1, 3); i++)
         {
             var name = columnsNames[i];
             var labels = columnsLabels[i].Labels;

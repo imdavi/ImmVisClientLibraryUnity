@@ -18,6 +18,8 @@ public static partial class ImmVisPandas
   static readonly grpc::Marshaller<global::GetNormalisedDatasetRequest> __Marshaller_GetNormalisedDatasetRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GetNormalisedDatasetRequest.Parser.ParseFrom);
   static readonly grpc::Marshaller<global::NormalisedDataset> __Marshaller_NormalisedDataset = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::NormalisedDataset.Parser.ParseFrom);
   static readonly grpc::Marshaller<global::GenerateDatasetRequest> __Marshaller_GenerateDatasetRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GenerateDatasetRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::KMeansAnalysisRequest> __Marshaller_KMeansAnalysisRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::KMeansAnalysisRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::KMeansAnalysisResponse> __Marshaller_KMeansAnalysisResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::KMeansAnalysisResponse.Parser.ParseFrom);
 
   static readonly grpc::Method<global::Empty, global::AvailableDatasetsList> __Method_ListAvailableDatasets = new grpc::Method<global::Empty, global::AvailableDatasetsList>(
       grpc::MethodType.Unary,
@@ -47,6 +49,13 @@ public static partial class ImmVisPandas
       __Marshaller_GenerateDatasetRequest,
       __Marshaller_DatasetMetadata);
 
+  static readonly grpc::Method<global::KMeansAnalysisRequest, global::KMeansAnalysisResponse> __Method_DoKMeansAnalysis = new grpc::Method<global::KMeansAnalysisRequest, global::KMeansAnalysisResponse>(
+      grpc::MethodType.Unary,
+      __ServiceName,
+      "DoKMeansAnalysis",
+      __Marshaller_KMeansAnalysisRequest,
+      __Marshaller_KMeansAnalysisResponse);
+
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
   {
@@ -73,6 +82,11 @@ public static partial class ImmVisPandas
     }
 
     public virtual global::System.Threading.Tasks.Task<global::DatasetMetadata> GenerateDataset(global::GenerateDatasetRequest request, grpc::ServerCallContext context)
+    {
+      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+    }
+
+    public virtual global::System.Threading.Tasks.Task<global::KMeansAnalysisResponse> DoKMeansAnalysis(global::KMeansAnalysisRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -166,6 +180,22 @@ public static partial class ImmVisPandas
     {
       return CallInvoker.AsyncUnaryCall(__Method_GenerateDataset, null, options, request);
     }
+    public virtual global::KMeansAnalysisResponse DoKMeansAnalysis(global::KMeansAnalysisRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DoKMeansAnalysis(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    public virtual global::KMeansAnalysisResponse DoKMeansAnalysis(global::KMeansAnalysisRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.BlockingUnaryCall(__Method_DoKMeansAnalysis, null, options, request);
+    }
+    public virtual grpc::AsyncUnaryCall<global::KMeansAnalysisResponse> DoKMeansAnalysisAsync(global::KMeansAnalysisRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    {
+      return DoKMeansAnalysisAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+    }
+    public virtual grpc::AsyncUnaryCall<global::KMeansAnalysisResponse> DoKMeansAnalysisAsync(global::KMeansAnalysisRequest request, grpc::CallOptions options)
+    {
+      return CallInvoker.AsyncUnaryCall(__Method_DoKMeansAnalysis, null, options, request);
+    }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     protected override ImmVisPandasClient NewInstance(ClientBaseConfiguration configuration)
     {
@@ -181,7 +211,8 @@ public static partial class ImmVisPandas
         .AddMethod(__Method_ListAvailableDatasets, serviceImpl.ListAvailableDatasets)
         .AddMethod(__Method_LoadDataset, serviceImpl.LoadDataset)
         .AddMethod(__Method_GetNormalisedDataset, serviceImpl.GetNormalisedDataset)
-        .AddMethod(__Method_GenerateDataset, serviceImpl.GenerateDataset).Build();
+        .AddMethod(__Method_GenerateDataset, serviceImpl.GenerateDataset)
+        .AddMethod(__Method_DoKMeansAnalysis, serviceImpl.DoKMeansAnalysis).Build();
   }
 
   /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -194,6 +225,7 @@ public static partial class ImmVisPandas
     serviceBinder.AddMethod(__Method_LoadDataset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::LoadDatasetRequest, global::DatasetMetadata>(serviceImpl.LoadDataset));
     serviceBinder.AddMethod(__Method_GetNormalisedDataset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GetNormalisedDatasetRequest, global::NormalisedDataset>(serviceImpl.GetNormalisedDataset));
     serviceBinder.AddMethod(__Method_GenerateDataset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GenerateDatasetRequest, global::DatasetMetadata>(serviceImpl.GenerateDataset));
+    serviceBinder.AddMethod(__Method_DoKMeansAnalysis, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::KMeansAnalysisRequest, global::KMeansAnalysisResponse>(serviceImpl.DoKMeansAnalysis));
   }
 
 }

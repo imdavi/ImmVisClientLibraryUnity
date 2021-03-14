@@ -7,54 +7,40 @@ using UnityEngine;
 
 public class ScatterplotBehaviour : MonoBehaviour
 {
-    public Mesh DataPointMesh;
-    public Material DataPointMaterial;
-    public Vector3 OriginPoint = new Vector3(-0.5f, -0.5f, -0.5f);
-    private const float POINT_MIN_SIZE = 0.05f;
-    private const float POINT_MIN_SCALE = 1f;
-    private const float POINT_MAX_SCALE = 10f;
-    private float PointSize = POINT_MIN_SIZE;
-    public float ColorMultiplier = 0.5f;
-
     [SerializeField]
     private LabelsBehaviour labelsBehaviour;
 
     [SerializeField]
     private GridsBehaviour gridsBehaviour;
 
-    private uint[] args = new uint[5] { 0, 0, 0, 0, 0 };
+    [SerializeField]
+    private ScatterplotPlotter pointsPlotter;
 
-    private ComputeBuffer positionsBuffer;
-    private ComputeBuffer argsBuffer;
-    private ComputeBuffer colorsBuffer;
-    private ComputeBuffer sizesBuffer;
+    [SerializeField]
+    private ScatterplotPlotter centroidsPlotter;
 
-    private const int FLOAT_STRIDE = 4;
+    public float ColorMultiplier = 0.5f;
 
-    private const int VECTOR4_BUFFER_STRIDE = FLOAT_STRIDE * 4;
-
-    private const int VECTOR3_BUFFER_STRIDE = FLOAT_STRIDE * 3;
-
-    private const string POSITIONS_BUFFER_NAME = "positionsBuffer";
-
-    private const string SIZES_BUFFER_NAME = "sizesBuffer";
-
-    private const string COLORS_BUFFER_NAME = "colorsBuffer";
-
-    private MaterialPropertyBlock block;
-    private const string MATRIX_PROPERTY_NAME = "_TransformMatrix";
-    private const string POINT_MINIMUM_SIZE_PROPERTY_NAME = "_PointMinimumSize";
-    private const string FILTER_Y = "_FilterY";
     private const int MaxAmountOfDimensions = 5;
 
-    void Start()
+    internal void PlotToPoints(NormalisedDataset data, bool isTranslucent = false)
     {
-        UpdateMaterialProperties();
-
-        argsBuffer = new ComputeBuffer(1, args.Length * sizeof(uint), ComputeBufferType.IndirectArguments);
+        Plot(pointsPlotter, data, isTranslucent);
+        UpdateLabels(data.ColumnsNames, data.ColumnsLabels);
+        UpdateGrids(data.ColumnsLabels);
     }
 
-    internal void PlotData(NormalisedDataset data)
+    private void UpdateGrids(RepeatedField<ColumnsLabels> columnsLabels)
+    {
+        gridsBehaviour.SetupGrids(columnsLabels);
+    }
+
+    private void UpdateLabels(RepeatedField<string> columnsNames, RepeatedField<ColumnsLabels> columnsLabels)
+    {
+        labelsBehaviour.UpdateLabels(columnsNames, columnsLabels);
+    }
+
+    private void Plot(ScatterplotPlotter plotter, NormalisedDataset data, bool isTranslucent = false)
     {
         var values = data.Rows;
         var pointsCount = values.Count;
@@ -99,7 +85,6 @@ public class ScatterplotBehaviour : MonoBehaviour
                         color.x = pointColor.r;
                         color.y = pointColor.g;
                         color.z = pointColor.b;
-                        color.w = 1.0f;
                         break;
                     case 4: // Size
                         size = value;
@@ -110,95 +95,33 @@ public class ScatterplotBehaviour : MonoBehaviour
             colors[i] = color;
             sizes[i] = size;
         }
-
-        PlotData(positions, colors, sizes);
-        labelsBehaviour.UpdateLabels(data.ColumnsNames, data.ColumnsLabels);
-        gridsBehaviour.SetupGrids(data.ColumnsLabels);
+        // if (isTranslucent)
+        // {
+        //     PointsAlpha = 0.5f;
+        // }
+        // else
+        // {
+        //     PointsAlpha = 1f;
+        // }
+        plotter.Plot(positions, colors, sizes);
     }
 
-    public void UpdateMaterialProperties()
+    internal void PlotKMeans(KMeansAnalysisResponse datasetToPlot)
     {
-        if (block == null)
-        {
-            block = new MaterialPropertyBlock();
-        }
-
-        block.SetMatrix(MATRIX_PROPERTY_NAME, transform.localToWorldMatrix * Matrix4x4.Translate(OriginPoint));
-        block.SetFloat(POINT_MINIMUM_SIZE_PROPERTY_NAME, PointSize);
+        Plot(pointsPlotter, datasetToPlot.LabelsMapping, true);
+        Plot(centroidsPlotter, datasetToPlot.Centroids);
+        UpdateLabels(datasetToPlot.LabelsMapping.ColumnsNames, datasetToPlot.LabelsMapping.ColumnsLabels);
+        UpdateGrids(datasetToPlot.LabelsMapping.ColumnsLabels);
     }
 
-    void Update()
+    public void UpdatePointSizeScale(float newScale) 
     {
-        UpdateMaterialProperties();
-
-        if (DataPointMesh != null && DataPointMaterial != null && argsBuffer != null)
-        {
-            Graphics.DrawMeshInstancedIndirect(
-                DataPointMesh,
-                0,
-                DataPointMaterial,
-                new Bounds(Vector3.zero, new Vector3(100.0f, 100.0f, 100.0f)),
-                argsBuffer,
-                0,
-                block
-            );
-        }
+        pointsPlotter.UpdatePointSizeScale(newScale);
+        centroidsPlotter.UpdatePointSizeScale(newScale);
     }
 
-    internal void ResetScatterplot()
+    internal void Reset()
     {
-        OnDisable();
-    }
-
-    void OnDisable()
-    {
-        if (positionsBuffer != null) positionsBuffer.Release();
-        positionsBuffer = null;
-
-        if (colorsBuffer != null) colorsBuffer.Release();
-        colorsBuffer = null;
-
-        if (sizesBuffer != null) sizesBuffer.Release();
-        sizesBuffer = null;
-
-        if (argsBuffer != null) argsBuffer.Release();
-        argsBuffer = null;
-    }
-
-    private void PlotData(Vector3[] positions, Vector4[] colors, float[] sizes)
-    {
-        if (positions.Length != colors.Length || positions.Length != sizes.Length)
-        {
-            Debug.Log("Make sure that positions and colors have the same length before plotting.");
-            return;
-        }
-
-        var pointsCount = positions.Length;
-
-        if (positionsBuffer != null) positionsBuffer.Release();
-        if (colorsBuffer != null) colorsBuffer.Release();
-        if (sizesBuffer != null) sizesBuffer.Release();
-
-        positionsBuffer = new ComputeBuffer(pointsCount, VECTOR3_BUFFER_STRIDE);
-        colorsBuffer = new ComputeBuffer(pointsCount, VECTOR4_BUFFER_STRIDE);
-        sizesBuffer = new ComputeBuffer(pointsCount, FLOAT_STRIDE);
-
-        positionsBuffer.SetData(positions);
-        colorsBuffer.SetData(colors);
-        sizesBuffer.SetData(sizes);
-
-        DataPointMaterial.SetBuffer(POSITIONS_BUFFER_NAME, positionsBuffer);
-        DataPointMaterial.SetBuffer(COLORS_BUFFER_NAME, colorsBuffer);
-        DataPointMaterial.SetBuffer(SIZES_BUFFER_NAME, sizesBuffer);
-
-        uint numIndices = (DataPointMesh != null) ? (uint)DataPointMesh.GetIndexCount(0) : 0;
-        args[0] = numIndices;
-        args[1] = (uint)pointsCount;
-        argsBuffer.SetData(args);
-    }
-
-    public void UpdatePointSizeScale(float newScale)
-    {
-        PointSize = Mathf.Clamp(newScale, POINT_MIN_SCALE, POINT_MAX_SCALE) * POINT_MIN_SIZE;
+        pointsPlotter?.ResetScatterplot();
     }
 }

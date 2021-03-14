@@ -1,4 +1,4 @@
-Shader "ImmVis/ScatterplotShader" 
+Shader "ImmVis/CentroidsScatterplotShader" 
 {
     Properties{
         _MainTex("Albedo (RGB)", 2D) = "white" {}
@@ -10,7 +10,7 @@ Shader "ImmVis/ScatterplotShader"
         LOD 200
 
         CGPROGRAM
-        #pragma surface surf Standard addshadow alpha:fade
+        #pragma surface surf Standard addshadow
         #pragma multi_compile_instancing
         #pragma instancing_options procedural:setup
 
@@ -37,7 +37,7 @@ Shader "ImmVis/ScatterplotShader"
                 data.xyz = mul(_TransformMatrix, float4(data.xyz, 1)).xyz;
 
                 float pointSize = sizesBuffer[unity_InstanceID];
-                float pointPlotSize = _PointMinimumSize * (pointSize + 1);
+                float pointPlotSize = _PointMinimumSize * (pointSize + 2);
 
                 unity_ObjectToWorld._11_21_31_41 = float4(pointPlotSize, 0, 0, 0);
                 unity_ObjectToWorld._12_22_32_42 = float4(0, pointPlotSize, 0, 0);
@@ -54,21 +54,13 @@ Shader "ImmVis/ScatterplotShader"
 
         void surf(Input IN, inout SurfaceOutputStandard o) 
         {
-            float4 col = 1.0f;
-            float alphaMultiplier = 1.0f;
-
-            #ifdef UNITY_PROCEDURAL_INSTANCING_ENABLED
-                col = colorsBuffer[unity_InstanceID];
-                alphaMultiplier = _PointsAlpha;
-            #else
-                col = float4(0, 0, 1, 1);
-            #endif
+            float4 col = float4(1, 1, 1, 1);
 
             fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * col;
             o.Albedo = c.rgb;
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-            o.Alpha = alphaMultiplier;
+            o.Alpha = c.a;
         }
         ENDCG
     }
