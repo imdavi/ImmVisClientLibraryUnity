@@ -26,4 +26,9 @@ public class MenuActions : BaseScreen
     {
         screenManager.ShowScreen("KMeans", datasetMetadata);
     }
+
+    public void ClickedOnDescriptiveStatistics() 
+    {
+        screenManager.ShowScreen("DescriptiveStatistics", datasetMetadata);
+    }
 }
