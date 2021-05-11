@@ -67,7 +67,7 @@ public class MenuDescriptiveStatistics : BaseScreen
 
             foreach(var feature in columnInfo.DescriptiveStatisticsFeatures)
             {
-                sb.AppendLine($"{feature.Name}:\t{feature.Value}");
+                sb.AppendLine($"{feature.Name}: {feature.Value}");
             }
 
             featuresText.text = sb.ToString();
