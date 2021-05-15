@@ -18,15 +18,34 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
+        if (immVisGrpcClientManager.IsReady)
+        {
+            screenManager.ShowScreen("DatasetSelection");
+        }
+        else
+        {
+            screenManager.ShowScreen("Connect");
+        }
+    }
+
+    public void ClickedOnConnect()
+    {
         screenManager.ShowScreen("Loading", data: "Connecting to ImmVis server...");
 
-        if (immVisGrpcClientManager != null)
+        if (immVisGrpcClientManager.IsReady)
+        {
+            screenManager.ShowScreen("DatasetSelection");
+        }
+        else
         {
             immVisGrpcClientManager.ClientInitialized += () =>
             {
-                screenManager.ShowScreen("Home");
+                screenManager.ShowScreen("DatasetSelection");
             };
+
+            immVisGrpcClientManager.ConnectToImmVisUsingDiscovery();
         }
+
     }
 
     public async void ClickedOnListAvailableDatasets()
@@ -42,7 +61,31 @@ public class MainMenuManager : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
+        }
+    }
+
+    public async void RequestedToPlotKMeans(List<string> selectedColumns, int centersToDetect)
+    {
+        screenManager.ShowScreen("Loading", data: "Plotting dataset...");
+
+        try
+        {
+            var grpcClient = immVisGrpcClientManager.GrpcClient;
+            var datasetToPlot = await grpcClient.DoKMeansAnalysisAsync(new KMeansAnalysisRequest()
+            {
+                ColumnsNames = { selectedColumns },
+                ClustersNumber = centersToDetect
+            });
+
+            scatterplotBehaviour?.PlotKMeans(datasetToPlot);
+
+            screenManager.ShowScreen("DatasetPlotted");
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError(ex);
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -62,12 +105,12 @@ public class MainMenuManager : MonoBehaviour
             {
                 DatasetPath = datasetPath
             });
-            screenManager.ShowScreen("PlotDataset", data: datasetMetadata);
+            screenManager.ShowScreen("DatasetActions", data: datasetMetadata);
         }
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -83,14 +126,14 @@ public class MainMenuManager : MonoBehaviour
                 ColumnsNames = { selectedColumns }
             });
 
-            scatterplotBehaviour?.PlotData(datasetToPlot);
+            scatterplotBehaviour?.PlotToPoints(datasetToPlot);
 
             screenManager.ShowScreen("DatasetPlotted");
         }
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -113,12 +156,12 @@ public class MainMenuManager : MonoBehaviour
                 CentersAmount = centersAmount
 
             });
-            screenManager.ShowScreen("PlotDataset", data: datasetMetadata);
+            screenManager.ShowScreen("DatasetActions", data: datasetMetadata);
         }
         catch (System.Exception ex)
         {
             Debug.LogError(ex);
-            screenManager.ShowScreen("Error");
+            screenManager.ShowScreen("Error", ex);
         }
     }
 
@@ -132,7 +175,7 @@ public class MainMenuManager : MonoBehaviour
         screenManager.ClearNavigationStack();
         screenManager.ShowScreen("Home");
 
-        scatterplotBehaviour.ResetScatterplot();
+        scatterplotBehaviour.Reset();
     }
 
     public void SubmitDatasetPath(string datasetPath)

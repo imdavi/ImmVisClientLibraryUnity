@@ -35,15 +35,22 @@ public static partial class ImmvisReflection {
           "ZXRNZXRhZGF0YRIRCglyb3dzQ291bnQYASABKAUSFAoMY29sdW1uc0NvdW50",
           "GAIgASgFEiAKC2NvbHVtbnNJbmZvGAMgAygLMgsuQ29sdW1uSW5mbyIzChtH",
           "ZXROb3JtYWxpc2VkRGF0YXNldFJlcXVlc3QSFAoMY29sdW1uc05hbWVzGAEg",
-          "AygJIjEKEU5vcm1hbGlzZWREYXRhc2V0EhwKBHJvd3MYASADKAsyDi5Ob3Jt",
-          "YWxpc2VkUm93Ih8KDU5vcm1hbGlzZWRSb3cSDgoGdmFsdWVzGAEgAygCMo0C",
-          "CgxJbW1WaXNQYW5kYXMSOQoVTGlzdEF2YWlsYWJsZURhdGFzZXRzEgYuRW1w",
-          "dHkaFi5BdmFpbGFibGVEYXRhc2V0c0xpc3QiABI2CgtMb2FkRGF0YXNldBIT",
-          "LkxvYWREYXRhc2V0UmVxdWVzdBoQLkRhdGFzZXRNZXRhZGF0YSIAEkoKFEdl",
-          "dE5vcm1hbGlzZWREYXRhc2V0EhwuR2V0Tm9ybWFsaXNlZERhdGFzZXRSZXF1",
-          "ZXN0GhIuTm9ybWFsaXNlZERhdGFzZXQiABI+Cg9HZW5lcmF0ZURhdGFzZXQS",
-          "Fy5HZW5lcmF0ZURhdGFzZXRSZXF1ZXN0GhAuRGF0YXNldE1ldGFkYXRhIgBi",
-          "BnByb3RvMw=="));
+          "AygJIm4KEU5vcm1hbGlzZWREYXRhc2V0EhwKBHJvd3MYASADKAsyDi5Ob3Jt",
+          "YWxpc2VkUm93EhQKDGNvbHVtbnNOYW1lcxgCIAMoCRIlCg1jb2x1bW5zTGFi",
+          "ZWxzGAMgAygLMg4uQ29sdW1uc0xhYmVscyIfCg1Ob3JtYWxpc2VkUm93Eg4K",
+          "BnZhbHVlcxgBIAMoAiIfCg1Db2x1bW5zTGFiZWxzEg4KBmxhYmVscxgBIAMo",
+          "CSJFChVLTWVhbnNBbmFseXNpc1JlcXVlc3QSFAoMY29sdW1uc05hbWVzGAEg",
+          "AygJEhYKDmNsdXN0ZXJzTnVtYmVyGAIgASgFImoKFktNZWFuc0FuYWx5c2lz",
+          "UmVzcG9uc2USKQoNbGFiZWxzTWFwcGluZxgBIAEoCzISLk5vcm1hbGlzZWRE",
+          "YXRhc2V0EiUKCWNlbnRyb2lkcxgCIAEoCzISLk5vcm1hbGlzZWREYXRhc2V0",
+          "MtICCgxJbW1WaXNQYW5kYXMSOQoVTGlzdEF2YWlsYWJsZURhdGFzZXRzEgYu",
+          "RW1wdHkaFi5BdmFpbGFibGVEYXRhc2V0c0xpc3QiABI2CgtMb2FkRGF0YXNl",
+          "dBITLkxvYWREYXRhc2V0UmVxdWVzdBoQLkRhdGFzZXRNZXRhZGF0YSIAEkoK",
+          "FEdldE5vcm1hbGlzZWREYXRhc2V0EhwuR2V0Tm9ybWFsaXNlZERhdGFzZXRS",
+          "ZXF1ZXN0GhIuTm9ybWFsaXNlZERhdGFzZXQiABI+Cg9HZW5lcmF0ZURhdGFz",
+          "ZXQSFy5HZW5lcmF0ZURhdGFzZXRSZXF1ZXN0GhAuRGF0YXNldE1ldGFkYXRh",
+          "IgASQwoQRG9LTWVhbnNBbmFseXNpcxIWLktNZWFuc0FuYWx5c2lzUmVxdWVz",
+          "dBoXLktNZWFuc0FuYWx5c2lzUmVzcG9uc2ViBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -56,8 +63,11 @@ public static partial class ImmvisReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::ColumnInfo), global::ColumnInfo.Parser, new[]{ "Column", "DescriptiveStatisticsFeatures" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DatasetMetadata), global::DatasetMetadata.Parser, new[]{ "RowsCount", "ColumnsCount", "ColumnsInfo" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::GetNormalisedDatasetRequest), global::GetNormalisedDatasetRequest.Parser, new[]{ "ColumnsNames" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::NormalisedDataset), global::NormalisedDataset.Parser, new[]{ "Rows" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::NormalisedRow), global::NormalisedRow.Parser, new[]{ "Values" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::NormalisedDataset), global::NormalisedDataset.Parser, new[]{ "Rows", "ColumnsNames", "ColumnsLabels" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::NormalisedRow), global::NormalisedRow.Parser, new[]{ "Values" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ColumnsLabels), global::ColumnsLabels.Parser, new[]{ "Labels" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::KMeansAnalysisRequest), global::KMeansAnalysisRequest.Parser, new[]{ "ColumnsNames", "ClustersNumber" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::KMeansAnalysisResponse), global::KMeansAnalysisResponse.Parser, new[]{ "LabelsMapping", "Centroids" }, null, null, null)
         }));
   }
   #endregion
@@ -1421,6 +1431,8 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public NormalisedDataset(NormalisedDataset other) : this() {
     rows_ = other.rows_.Clone();
+    columnsNames_ = other.columnsNames_.Clone();
+    columnsLabels_ = other.columnsLabels_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -1439,6 +1451,26 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
     get { return rows_; }
   }
 
+  /// <summary>Field number for the "columnsNames" field.</summary>
+  public const int ColumnsNamesFieldNumber = 2;
+  private static readonly pb::FieldCodec<string> _repeated_columnsNames_codec
+      = pb::FieldCodec.ForString(18);
+  private readonly pbc::RepeatedField<string> columnsNames_ = new pbc::RepeatedField<string>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<string> ColumnsNames {
+    get { return columnsNames_; }
+  }
+
+  /// <summary>Field number for the "columnsLabels" field.</summary>
+  public const int ColumnsLabelsFieldNumber = 3;
+  private static readonly pb::FieldCodec<global::ColumnsLabels> _repeated_columnsLabels_codec
+      = pb::FieldCodec.ForMessage(26, global::ColumnsLabels.Parser);
+  private readonly pbc::RepeatedField<global::ColumnsLabels> columnsLabels_ = new pbc::RepeatedField<global::ColumnsLabels>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::ColumnsLabels> ColumnsLabels {
+    get { return columnsLabels_; }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as NormalisedDataset);
@@ -1453,6 +1485,8 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
       return true;
     }
     if(!rows_.Equals(other.rows_)) return false;
+    if(!columnsNames_.Equals(other.columnsNames_)) return false;
+    if(!columnsLabels_.Equals(other.columnsLabels_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -1460,6 +1494,8 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
   public override int GetHashCode() {
     int hash = 1;
     hash ^= rows_.GetHashCode();
+    hash ^= columnsNames_.GetHashCode();
+    hash ^= columnsLabels_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1474,6 +1510,8 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
     rows_.WriteTo(output, _repeated_rows_codec);
+    columnsNames_.WriteTo(output, _repeated_columnsNames_codec);
+    columnsLabels_.WriteTo(output, _repeated_columnsLabels_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -1483,6 +1521,8 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
   public int CalculateSize() {
     int size = 0;
     size += rows_.CalculateSize(_repeated_rows_codec);
+    size += columnsNames_.CalculateSize(_repeated_columnsNames_codec);
+    size += columnsLabels_.CalculateSize(_repeated_columnsLabels_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -1495,6 +1535,8 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
       return;
     }
     rows_.Add(other.rows_);
+    columnsNames_.Add(other.columnsNames_);
+    columnsLabels_.Add(other.columnsLabels_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -1508,6 +1550,14 @@ public sealed partial class NormalisedDataset : pb::IMessage<NormalisedDataset> 
           break;
         case 10: {
           rows_.AddEntriesFrom(input, _repeated_rows_codec);
+          break;
+        }
+        case 18: {
+          columnsNames_.AddEntriesFrom(input, _repeated_columnsNames_codec);
+          break;
+        }
+        case 26: {
+          columnsLabels_.AddEntriesFrom(input, _repeated_columnsLabels_codec);
           break;
         }
       }
@@ -1630,6 +1680,445 @@ public sealed partial class NormalisedRow : pb::IMessage<NormalisedRow> {
         case 10:
         case 13: {
           values_.AddEntriesFrom(input, _repeated_values_codec);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class ColumnsLabels : pb::IMessage<ColumnsLabels> {
+  private static readonly pb::MessageParser<ColumnsLabels> _parser = new pb::MessageParser<ColumnsLabels>(() => new ColumnsLabels());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<ColumnsLabels> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[11]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ColumnsLabels() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ColumnsLabels(ColumnsLabels other) : this() {
+    labels_ = other.labels_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ColumnsLabels Clone() {
+    return new ColumnsLabels(this);
+  }
+
+  /// <summary>Field number for the "labels" field.</summary>
+  public const int LabelsFieldNumber = 1;
+  private static readonly pb::FieldCodec<string> _repeated_labels_codec
+      = pb::FieldCodec.ForString(10);
+  private readonly pbc::RepeatedField<string> labels_ = new pbc::RepeatedField<string>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<string> Labels {
+    get { return labels_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as ColumnsLabels);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(ColumnsLabels other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!labels_.Equals(other.labels_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= labels_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    labels_.WriteTo(output, _repeated_labels_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    size += labels_.CalculateSize(_repeated_labels_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(ColumnsLabels other) {
+    if (other == null) {
+      return;
+    }
+    labels_.Add(other.labels_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          labels_.AddEntriesFrom(input, _repeated_labels_codec);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class KMeansAnalysisRequest : pb::IMessage<KMeansAnalysisRequest> {
+  private static readonly pb::MessageParser<KMeansAnalysisRequest> _parser = new pb::MessageParser<KMeansAnalysisRequest>(() => new KMeansAnalysisRequest());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<KMeansAnalysisRequest> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[12]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public KMeansAnalysisRequest() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public KMeansAnalysisRequest(KMeansAnalysisRequest other) : this() {
+    columnsNames_ = other.columnsNames_.Clone();
+    clustersNumber_ = other.clustersNumber_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public KMeansAnalysisRequest Clone() {
+    return new KMeansAnalysisRequest(this);
+  }
+
+  /// <summary>Field number for the "columnsNames" field.</summary>
+  public const int ColumnsNamesFieldNumber = 1;
+  private static readonly pb::FieldCodec<string> _repeated_columnsNames_codec
+      = pb::FieldCodec.ForString(10);
+  private readonly pbc::RepeatedField<string> columnsNames_ = new pbc::RepeatedField<string>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<string> ColumnsNames {
+    get { return columnsNames_; }
+  }
+
+  /// <summary>Field number for the "clustersNumber" field.</summary>
+  public const int ClustersNumberFieldNumber = 2;
+  private int clustersNumber_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int ClustersNumber {
+    get { return clustersNumber_; }
+    set {
+      clustersNumber_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as KMeansAnalysisRequest);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(KMeansAnalysisRequest other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!columnsNames_.Equals(other.columnsNames_)) return false;
+    if (ClustersNumber != other.ClustersNumber) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= columnsNames_.GetHashCode();
+    if (ClustersNumber != 0) hash ^= ClustersNumber.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    columnsNames_.WriteTo(output, _repeated_columnsNames_codec);
+    if (ClustersNumber != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(ClustersNumber);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    size += columnsNames_.CalculateSize(_repeated_columnsNames_codec);
+    if (ClustersNumber != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ClustersNumber);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(KMeansAnalysisRequest other) {
+    if (other == null) {
+      return;
+    }
+    columnsNames_.Add(other.columnsNames_);
+    if (other.ClustersNumber != 0) {
+      ClustersNumber = other.ClustersNumber;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          columnsNames_.AddEntriesFrom(input, _repeated_columnsNames_codec);
+          break;
+        }
+        case 16: {
+          ClustersNumber = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class KMeansAnalysisResponse : pb::IMessage<KMeansAnalysisResponse> {
+  private static readonly pb::MessageParser<KMeansAnalysisResponse> _parser = new pb::MessageParser<KMeansAnalysisResponse>(() => new KMeansAnalysisResponse());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<KMeansAnalysisResponse> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ImmvisReflection.Descriptor.MessageTypes[13]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public KMeansAnalysisResponse() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public KMeansAnalysisResponse(KMeansAnalysisResponse other) : this() {
+    labelsMapping_ = other.labelsMapping_ != null ? other.labelsMapping_.Clone() : null;
+    centroids_ = other.centroids_ != null ? other.centroids_.Clone() : null;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public KMeansAnalysisResponse Clone() {
+    return new KMeansAnalysisResponse(this);
+  }
+
+  /// <summary>Field number for the "labelsMapping" field.</summary>
+  public const int LabelsMappingFieldNumber = 1;
+  private global::NormalisedDataset labelsMapping_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::NormalisedDataset LabelsMapping {
+    get { return labelsMapping_; }
+    set {
+      labelsMapping_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "centroids" field.</summary>
+  public const int CentroidsFieldNumber = 2;
+  private global::NormalisedDataset centroids_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::NormalisedDataset Centroids {
+    get { return centroids_; }
+    set {
+      centroids_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as KMeansAnalysisResponse);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(KMeansAnalysisResponse other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (!object.Equals(LabelsMapping, other.LabelsMapping)) return false;
+    if (!object.Equals(Centroids, other.Centroids)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (labelsMapping_ != null) hash ^= LabelsMapping.GetHashCode();
+    if (centroids_ != null) hash ^= Centroids.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (labelsMapping_ != null) {
+      output.WriteRawTag(10);
+      output.WriteMessage(LabelsMapping);
+    }
+    if (centroids_ != null) {
+      output.WriteRawTag(18);
+      output.WriteMessage(Centroids);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (labelsMapping_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(LabelsMapping);
+    }
+    if (centroids_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Centroids);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(KMeansAnalysisResponse other) {
+    if (other == null) {
+      return;
+    }
+    if (other.labelsMapping_ != null) {
+      if (labelsMapping_ == null) {
+        LabelsMapping = new global::NormalisedDataset();
+      }
+      LabelsMapping.MergeFrom(other.LabelsMapping);
+    }
+    if (other.centroids_ != null) {
+      if (centroids_ == null) {
+        Centroids = new global::NormalisedDataset();
+      }
+      Centroids.MergeFrom(other.Centroids);
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          if (labelsMapping_ == null) {
+            LabelsMapping = new global::NormalisedDataset();
+          }
+          input.ReadMessage(LabelsMapping);
+          break;
+        }
+        case 18: {
+          if (centroids_ == null) {
+            Centroids = new global::NormalisedDataset();
+          }
+          input.ReadMessage(Centroids);
           break;
         }
       }

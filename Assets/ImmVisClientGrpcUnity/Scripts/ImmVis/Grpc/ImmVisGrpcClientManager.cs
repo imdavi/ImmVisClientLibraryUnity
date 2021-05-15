@@ -37,9 +37,7 @@ namespace ImmVis.Grpc
         {
             if (ShouldUseDiscoveryService && DiscoveryManager != null)
             {
-                DiscoveryManager.DiscoveryFinished += DiscoveryFinished;
-                DiscoveryManager.StartDiscovery(shouldReturnOnFirstOccurrence: true);
-                Debug.Log("Discovery has started!");
+                ConnectToImmVisUsingDiscovery();
             }
             else
             {
@@ -50,6 +48,13 @@ namespace ImmVis.Grpc
         void OnApplicationQuit()
         {
             ReleaseGrpcClient();
+        }
+
+        public void ConnectToImmVisUsingDiscovery()
+        {
+            DiscoveryManager.DiscoveryFinished += DiscoveryFinished;
+            DiscoveryManager.StartDiscovery(shouldReturnOnFirstOccurrence: true);
+            Debug.Log("Discovery has started!");
         }
 
         private void DiscoveryFinished(List<string> availableServersIps)

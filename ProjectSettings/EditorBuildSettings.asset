@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ImmVisClientGrpcUnity/Examples/DataAnalysis/DataAnalysis.unity
+    guid: b52a574ff439b424890eed1730cb2dff
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ac95fe6a7a55e0a46b2a4233387da30a,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5845ce687ed07fe4885037da57dab5bd,
+      type: 2}
