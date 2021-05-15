@@ -1,8 +1,24 @@
 # ImmVis Unity Client library
 
-This project 
+This project is an example of a client library implementation for the [ImmVis Framework](https://github.com/imdavi/ImmVisServerPython).
 
-## Supported deployment platforms
+## Samples
+
+<img src="Imgs/DataAnalysisScreenshot.png" alt="drawing" width="480"/>
+
+We included two samples inside this client library:
+
+* **Basic Usage**: simple Unity scene that show how to use the `ImmVisGrpcClientManager` prefab.
+* **DataAnalysis**: an advanced sample that shows an VR application that uses ImmVis to create an interactive scatterplot
+
+Please refer to the tutorials below to run the sameples. 
+
+## Tutorials
+
+* [Running ImmVisClientLibraryUnity Samples](docs/tutorial_running_samples.md)
+* [Integrating ImmVisClientLibraryUnity to a Unity project](docs/tutorial_integrating_library.md)
+
+## Which platforms are supported by this library?
 
 This library can be used to target games/applications for the following platforms:
 - Windows
@@ -10,31 +26,17 @@ This library can be used to target games/applications for the following platform
 - MacOS
 - Android (ARM and x86)
 
-If you need support for iOS, please consider downloading the [Grpc.Core Package 2.26.0](https://www.nuget.org/packages/Grpc.Core/2.26.0) and copy the iOS binaries to the `Assets\ImmVisClientGrpcUnity/Plugins/Grpc.Core/native/ios` folder
-
+If you need support for iOS, please consider downloading the [Grpc.Core Package 2.26.0](https://www.nuget.org/packages/Grpc.Core/2.26.0) and copy the iOS binaries to the `Assets/ImmVisClientLibraryUnity/Plugins/Grpc.Core/native/ios` folder.
 
 ## Development Setup
 
 Recommended tools for development:
-- [Unity 2019.4.8f1](https://unity3d.com/pt/get-unity/download) (We recommend the usage of Unity Hub to ease the install of different Unity versions)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- To use Visual Studio Code with Unity, please follow [this instructions](https://code.visualstudio.com/docs/other/unity)
-
-
-## Adding this library to an existing project
-
-There are two ways of adding this library to your Unity project:
-
-- Download the latest version of `ImmVisClientGrpcUnity.unitypackage` available on the [Releases page](https://github.com/imdavi/immvis-client-grpc-unity/releases) and [importing the asset into your project](https://docs.unity3d.com/Manual/AssetPackagesImport.html)
-- Download or clone this repository and copy the `Assets/ImmVisClientGrpcUnity` folder to the `Assets` folder of your project
-
-## Using the library
-
-Unfortunately we still don't provide a complete documentation about using the library yet. To partially remediate that, we included two samples ([Basic Usage](https://github.com/imdavi/immvis-client-grpc-unity/tree/master/Assets/ImmVisClientGrpcUnity/Examples/BasicUsage) and [Scatterplot](https://github.com/imdavi/immvis-client-grpc-unity/tree/master/Assets/ImmVisClientGrpcUnity/Examples/Scatterplot)), where you can find how the current features of ImmVis can be implemented.
-
-## Adding new features
-
-Please refer to the documentation available on [immvis-server-grpc](https://github.com/imdavi/immvis-server-grpc) page in order to add new functionalities to this project.
+- Operating system: Windows / Linux / Mac OS
+- [Unity](https://unity.com/) `2020.3.8f1`. We recommend the usage of [Unity Hub](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html) to perform the installation.
+- **Optional but recommended**: [Visual Studio Code](https://code.visualstudio.com/). Follow [these instructions](https://code.visualstudio.com/docs/other/unity) to make Unity work with Visual Studio Code. Some operating systems might have problems with Intellisense (code auto-completion) and if that is your case, consider installing these softwares: 
+    - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471) (Windows)
+    - [.NET 5.0](https://dotnet.microsoft.com/download) (Linux, Mac OS)
+    - [Mono](https://www.mono-project.com/download/stable/#download-lin) (Linux).
 
 ## Contributing
 
