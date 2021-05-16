@@ -1,0 +1,9 @@
+Copyright (c) 2019-2021 Felipe Pedroso
+
+This product includes software from gRPC (Apache 2.0)
+  * Copyright 2014 gRPC authors.
+  * https://github.com/grpc/grpc
+
+The shaders used by the "Data Analysis" samples are based on the code created by NoiseCrime
+  * Copyright (c) 2016 Noisecrime
+  * https://github.com/noisecrime/Unity-InstancedIndirectExamples
