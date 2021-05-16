@@ -4,7 +4,7 @@ This tutorial covers how to set up and run the ImmVis Unity client library sampl
 
 ## Requirements
 
-- Operating system: Windows / Linux / Mac OS
+- Operating system: Windows, Linux, or macOS
 - [Unity](https://unity.com/) `2020.3.8f1`. We recommend the usage of [Unity Hub](https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html) to perform the installation.
 - **Optional but recommended**: [Visual Studio Code](https://code.visualstudio.com/). Follow [these instructions](https://code.visualstudio.com/docs/other/unity) to make Unity work with Visual Studio Code. Some operating systems might have problems with Intellisense (code auto-completion) and if that is your case, consider installing these softwares: 
     - [.NET Framework 4.7.1](https://dotnet.microsoft.com/download/dotnet-framework/net471) (Windows)
