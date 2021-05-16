@@ -1,5 +1,5 @@
 # Tutorial:  Integrating ImmVisClientLibraryUnity to a Unity project
-This tutorial covers covers how to integrate the `ImmVisClientLibraryUnity` library to a Unity project.
+This tutorial covers how to integrate the `ImmVisClientLibraryUnity` library into a Unity project.
 
 ## Requirements
 
@@ -12,14 +12,14 @@ This tutorial covers covers how to integrate the `ImmVisClientLibraryUnity` libr
 
 ## Steps
 
-1. Follow the [setup steps from ImmVisServerPython](https://github.com/imdavi/ImmVisServerPython/blob/main/docs/tutorial_setup.md) to setup and run the server project.
+1. Follow the [setup steps from ImmVisServerPython](https://github.com/imdavi/ImmVisServerPython/blob/main/docs/tutorial_setup.md) to set up and run the server project.
 1. Open your project and use one of the following alternatives to import the `ImmVisClientLibraryUnity`:
     - Download the latest version of `ImmVisClientLibraryUnity.unitypackage` available on the [Releases page](https://github.com/imdavi/immvis-client-grpc-unity/releases) and [importing the asset into your project](https://docs.unity3d.com/Manual/AssetPackagesImport.html)
     - Download or clone this repository and copy the `Assets/ImmVisClientLibraryUnity` folder to the `Assets` folder of your project
 1. Use the [Package Manager](https://docs.unity3d.com/Manual/upm-ui.html) to install the `XR Interaction Toolkit` package to your project. Please note that you might need to select to search inside the `Unity Registry` for these packages. If `XR Interaction Toolkit` is not appearing on your Package Manager, consider enabling `Enable Preview Packages` inside the package manager advanced settings.
-1. Follow this steps to check if everything worked fine:
+1. Follow these steps to check if everything worked fine:
     - Run the `ImmVisServerPython` as described [here](https://github.com/imdavi/ImmVisServerPython/blob/main/docs/tutorial_setup.md#running-immvis-server)
-    - On Unity Project tab, bavigate to the Basic Usage sample folder (`Assets/ImmVisClientGrpcUnity/Examples/BasicUsage`)
-    - Open the main scene of the sample (`ExampleScene.unity`). If you are prompted with the TextMesh Pro dialog, click on `Import TMP Essentials`.
-    - Press play to run the sample and check if any messages appeared on console.
+    - On the Unity Project tab, navigate to the Basic Usage sample folder (`Assets/ImmVisClientGrpcUnity/Examples/BasicUsage`)
+    - Open the main scene of the sample (`ExampleScene.unity`). If Unity displays a TextMesh Pro dialog, click on `Import TMP Essentials`.
+    - Press play to run the sample and check if any messages appeared on the Unity console.
 1. You are now ready to use the ImmVis Framework inside your Unity project, including the `ImmVisGrpcClientManager` prefab (`Assets/ImmVisClientGrpcUnity/Prefabs/ImmVisGrpcClientManager.unity`). Check out the samples inside `Assets/ImmVisClientGrpcUnity/Examples` to understand how to use the framework.

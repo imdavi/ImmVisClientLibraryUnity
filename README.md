@@ -1,5 +1,3 @@
-# ImmVis Unity Client library
-
 This project is an example of a client library implementation for the [ImmVis Framework](https://github.com/imdavi/ImmVisServerPython).
 
 ## Samples
@@ -8,22 +6,22 @@ This project is an example of a client library implementation for the [ImmVis Fr
 
 We included two samples inside this client library:
 
-* **Basic Usage**: simple Unity scene that show how to use the `ImmVisGrpcClientManager` prefab.
-* **DataAnalysis**: an advanced sample that shows an VR application that uses ImmVis to create an interactive scatterplot
+* **Basic Usage**: simple Unity scene that shows how to use the `ImmVisGrpcClientManager` prefab.
+* **DataAnalysis**: an advanced sample that shows a VR application that uses ImmVis to create an interactive scatterplot
 
-Please refer to the tutorials below to run the sameples. 
+Please refer to the tutorials below to run the samples. 
 
 ## Tutorials
 
-* [Running ImmVisClientLibraryUnity Samples](docs/tutorial_running_samples.md)
-* [Integrating ImmVisClientLibraryUnity to a Unity project](docs/tutorial_integrating_library.md)
+* [Running ImmVisClientLibraryUnity Samples](Docs/tutorial_running_samples.md)
+* [Integrating ImmVisClientLibraryUnity to a Unity project](Docs/tutorial_integrating_library.md)
 
-## Which platforms are supported by this library?
+## Which this library supports platforms?
 
-This library can be used to target games/applications for the following platforms:
+Developers can use this library to create games/applications for the following platforms:
 - Windows
 - Linux
-- MacOS
+- macOS
 - Android (ARM and x86)
 
 If you need support for iOS, please consider downloading the [Grpc.Core Package 2.26.0](https://www.nuget.org/packages/Grpc.Core/2.26.0) and copy the iOS binaries to the `Assets/ImmVisClientLibraryUnity/Plugins/Grpc.Core/native/ios` folder.
@@ -40,4 +38,4 @@ Recommended tools for development:
 
 ## Contributing
 
-Our model of contribution is similar to the one described on https://github.com/firstcontributions/first-contributions, with the difference that members of IMDAVI don't need to create a fork from this repository, only create a branch here to submit their pull-requests.
+Our contribution model is similar to the one described on https://github.com/firstcontributions/first-contributions, with the difference that members of IMDAVI don't need to create a fork from this repository, only create a branch here to submit their pull-requests.
